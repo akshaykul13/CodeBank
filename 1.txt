@@ -1,0 +1,33 @@
+static int minCoins(Vector <Integer>a , int S)
+{
+    Integer[] valueCoins = (Integer[]) a.toArray(new Integer[0]);     
+	int sum = S; 
+	int[] minimum = new int[sum+1]; 
+	int[][] coins = new int[sum+1][2]; 
+	/* initializing the minimum of every sum to infinity */ 
+	for(int i = 1; i < minimum.length; i++)
+    {
+        minimum[i] = sum + 10000;
+    }
+    /* initializing that for minumum sum of zero, 0 coin is required */ 
+	minimum[0] = 0; 
+	for(int i = 1; i <= sum; i++)
+    {
+        for(int j = 0; j <valueCoins.length; j++)
+        {
+            if(valueCoins[j] == i)
+            {
+                minimum[i] = 1; 
+				coins[i][0] = i; 
+				coins[i][1] = 0;
+            }
+            else if((valueCoins[j] < i) && (((minimum[i-valueCoins[j]]) + 1) < minimum[i]))
+            {
+                minimum[i] = (minimum[i-valueCoins[j]]) + 1; 
+				coins[i][0] = valueCoins[j]; 
+				coins[i][1] = (i-valueCoins[j]);
+            }
+        }
+    }
+    return minimum[minimum.length-1];
+}

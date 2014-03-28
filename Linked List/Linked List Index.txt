@@ -1,0 +1,30 @@
+Write a function to get Nth node in a Linked List - LL1
+Given only a pointer to a node to be deleted in a singly linked list, how do you delete it? - LL2
+Print the middle of a given linked list - LL3
+Nth node from the end of a Linked List - LL4	
+Delete a Linked List - LL5
+Function to reverse a linked list - LL6
+Detect loop in a linked list - LL7
+Function to check if a singly linked list is palindrome - LL8
+Copy a linked list with next and arbit pointer - LL9	
+Insertion in a sorted linked list - LL10
+Function to get the intersection point of two Linked Lists - LL11
+Recursive function to print reverse of a Linked List - LL12
+Remove duplicates from a sorted linked list - LL13
+Reverse a Doubly Linked List - LL14
+Split a Circular Linked List into two halves - LL15
+Move last element to front of a given Linked List - LL16
+Pairwise swap elements of a given linked list - LL17
+Delete node in a double linked list - LL18
+Intersection of two sorted linked lists - LL19
+Delete alternate nodes in a linked list - LL20
+Merge two sorted linked lists - LL21
+Identical Linked Lists - LL22
+Merge Sort for Linked Lists - LL23
+Reverse linked list in groups - LL24
+Sorted insert for circular linked list - LL25
+Detect and Remove Loop in a Linked List - LL26
+Add two numbers represented by linked lists - LL27
+Sorted Linked List to Balanced BST - LL28
+Find a triplet from three linked lists with sum equal to a given number - LL29
+LRU cache - LL30

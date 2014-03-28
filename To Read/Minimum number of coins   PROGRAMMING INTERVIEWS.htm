@@ -1,0 +1,2993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0068)http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="222271464485161" property="fb:app_id">
+<meta content="595114712" property="fb:admins">
+<meta content="PROGRAMMING INTERVIEWS" property="og:site_name">
+<meta content="article" property="og:type">
+
+<script type="text/javascript" async="" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/ga.js"></script><script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/cb=gapi.loaded_1" async=""></script><script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript">(function() { var a=window,b="jstiming",d="tick";var e=function(c){this.t={};this.tick=function(c,p,h){h=void 0!=h?h:(new Date).getTime();this.t[c]=[h,p]};this[d]("start",null,c)},f=new e;a.jstiming={Timer:e,load:f};if(a.performance&&a.performance.timing){var g=a.performance.timing,j=a[b].load,k=g.navigationStart,l=g.responseStart;0<k&&l>=k&&(j[d]("_wtsrt",void 0,k),j[d]("wtsrt_","_wtsrt",l),j[d]("tbsd_","wtsrt_"))}
+try{var m=null;a.chrome&&a.chrome.csi&&(m=Math.floor(a.chrome.csi().pageT),j&&0<k&&(j[d]("_tbnd",void 0,a.chrome.csi().startE),j[d]("tbnd_","_tbnd",k)));null==m&&a.gtbExternal&&(m=a.gtbExternal.pageT());null==m&&a.external&&(m=a.external.pageT,j&&0<k&&(j[d]("_tbnd",void 0,a.external.startE),j[d]("tbnd_","_tbnd",k)));m&&(a[b].pt=m)}catch(n){};a.tickAboveFold=function(c){var i=0;if(c.offsetParent){do i+=c.offsetTop;while(c=c.offsetParent)}c=i;750>=c&&a[b].load[d]("aft")};var q=!1;function r(){q||(q=!0,a[b].load[d]("firstScrollTime"))}a.addEventListener?a.addEventListener("scroll",r,!1):a.attachEvent("onscroll",r);
+ })();</script>
+<meta content="true" name="MSSmartTagsPreventParsing">
+<meta content="blogger" name="generator">
+<link href="http://tech-queries.blogspot.in/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="PROGRAMMING INTERVIEWS - Atom" href="http://tech-queries.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="PROGRAMMING INTERVIEWS - RSS" href="http://tech-queries.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="PROGRAMMING INTERVIEWS - Atom" href="http://www.blogger.com/feeds/6038272452605714757/posts/default">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=6038272452605714757">
+<link rel="alternate" type="application/atom+xml" title="PROGRAMMING INTERVIEWS - Atom" href="http://tech-queries.blogspot.com/feeds/3234023274542396938/comments/default">
+<link rel="image_src" href="http://2.bp.blogspot.com/_DCqVNrdxjKY/TNgBH_VcyzI/AAAAAAAAD2M/QILHBL7rLXE/s72-c/Dyn+Prog.png">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>
+Minimum number of coins | PROGRAMMING INTERVIEWS</title>
+<link type="text/css" rel="stylesheet" href="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/3950009988-widget_css_bundle.css">
+<link type="text/css" rel="stylesheet" href="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/authorization.css">
+<style id="page-skin-1" type="text/css"><!--
+/*
+Theme Name: Box Tube
+Theme Style: Box Module WordPress Theme
+Theme URI: http://www.dezzain.com
+Description: Customized WordPress Theme With Customize And Optimize Widgetize Box Sidebar And Widgtize Footer
+Author: Richie K
+Author URI: http://www.dezzain.com
+.dp-highlighter
+{
+font-family: "Consolas", "Monaco", "Courier New", Courier, monospace;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 99%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-top: 1px; /* adds a little border on top when controls are hidden */
+}
+/* clear styles */
+.dp-highlighter ol,
+.dp-highlighter ol li,
+.dp-highlighter ol li span
+{
+margin: 0;
+padding: 0;
+border: none;
+}
+.dp-highlighter a,
+.dp-highlighter a:hover
+{
+background: none;
+border: none;
+padding: 0;
+margin: 0;
+}
+.dp-highlighter .bar
+{
+padding-left: 45px;
+}
+.dp-highlighter.collapsed .bar,
+.dp-highlighter.nogutter .bar
+{
+padding-left: 0px;
+}
+.dp-highlighter ol
+{
+list-style: decimal; /* for ie */
+background-color: #fff;
+margin: 0px 0px 1px 45px !important; /* 1px bottom margin seems to fix occasional Firefox scrolling */
+padding: 0px;
+color: #5C5C5C;
+}
+.dp-highlighter.nogutter ol,
+.dp-highlighter.nogutter ol li
+{
+list-style: none !important;
+margin-left: 0px !important;
+}
+.dp-highlighter ol li,
+.dp-highlighter .columns div
+{
+list-style: decimal-leading-zero; /* better look for others, override cascade from OL */
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 19px;
+}
+.dp-highlighter.nogutter ol li,
+.dp-highlighter.nogutter .columns div
+{
+border: 0;
+}
+.dp-highlighter .columns
+{
+background-color: #F8F8F8;
+color: gray;
+overflow: hidden;
+width: 100%;
+}
+.dp-highlighter .columns div
+{
+padding-bottom: 5px;
+}
+.dp-highlighter ol li.alt
+{
+background-color: #FFF;
+color: inherit;
+}
+.dp-highlighter ol li span
+{
+color: black;
+background-color: inherit;
+}
+/* Adjust some properties when collapsed */
+.dp-highlighter.collapsed ol
+{
+margin: 0px;
+}
+.dp-highlighter.collapsed ol li
+{
+display: none;
+}
+/* Additional modifications when in print-view */
+.dp-highlighter.printing
+{
+border: none;
+}
+.dp-highlighter.printing .tools
+{
+display: none !important;
+}
+.dp-highlighter.printing li
+{
+display: list-item !important;
+}
+/* Styles for the tools */
+.dp-highlighter .tools
+{
+padding: 3px 8px 3px 10px;
+font: 9px Verdana, Geneva, Arial, Helvetica, sans-serif;
+color: silver;
+background-color: #f8f8f8;
+padding-bottom: 10px;
+border-left: 3px solid #6CE26C;
+}
+.dp-highlighter.nogutter .tools
+{
+border-left: 0;
+}
+.dp-highlighter.collapsed .tools
+{
+border-bottom: 0;
+}
+.dp-highlighter .tools a
+{
+font-size: 9px;
+color: #a0a0a0;
+background-color: inherit;
+text-decoration: none;
+margin-right: 10px;
+}
+.dp-highlighter .tools a:hover
+{
+color: red;
+background-color: inherit;
+text-decoration: underline;
+}
+/* About dialog styles */
+.dp-about { background-color: #fff; color: #333; margin: 0px; padding: 0px; }
+.dp-about table { width: 100%; height: 100%; font-size: 11px; font-family: Tahoma, Verdana, Arial, sans-serif !important; }
+.dp-about td { padding: 10px; vertical-align: top; }
+.dp-about .copy { border-bottom: 1px solid #ACA899; height: 95%; }
+.dp-about .title { color: red; background-color: inherit; font-weight: bold; }
+.dp-about .para { margin: 0 0 4px 0; }
+.dp-about .footer { background-color: #ECEADB; color: #333; border-top: 1px solid #fff; text-align: right; }
+.dp-about .close { font-size: 11px; font-family: Tahoma, Verdana, Arial, sans-serif !important; background-color: #ECEADB; color: #333; width: 60px; height: 22px; }
+/* Language specific styles */
+.dp-highlighter .comment, .dp-highlighter .comments { color: #008200; background-color: inherit; }
+.dp-highlighter .string { color: blue; background-color: inherit; }
+.dp-highlighter .keyword { color: #069; font-weight: bold; background-color: inherit; }
+.dp-highlighter .preprocessor { color: gray; background-color: inherit; }
+Theme code and css are under copyright 2006-2008 Dezzain.com
+*/
+body {
+font-family: Arial, Helvetica;
+font-size: 70%;
+color: #000000;
+margin: 0px;
+padding: 0px;
+background: #FFFFFF url(http://www.templatesimages.com/images/BoxTube/body.gif) repeat-x top;
+}
+.left-option {
+float: left;
+}
+.right-option {
+float: right;
+}
+.download {
+background: #eaeed2 url(http://www.templatesimages.com/images/BoxTube/download.gif) no-repeat left 1px;
+padding: 12px 3px 12px 40px;
+clear: both;
+width: 70%;
+margin-top: 5px;
+margin-bottom: 5px;
+border: 1px solid #DAE1B0;
+font-size: 12px;
+line-height: 17px;
+color: #272727;
+font-weight: 500;
+}
+.warning {
+background: #d5c3c3 url(http://www.templatesimages.com/images/BoxTube/warning.gif) no-repeat left 1px;
+padding: 12px 3px 12px 40px;
+clear: both;
+width: 70%;
+margin-top: 5px;
+margin-bottom: 5px;
+border: 1px solid #C5ABAB;
+font-size: 12px;
+line-height: 17px;
+color: #272727;
+font-weight: 500;
+}
+.note {
+background: #f4f3f3 url(http://www.templatesimages.com/images/BoxTube/note.gif) no-repeat left 1px;
+padding: 12px 3px 12px 40px;
+clear: both;
+width: 70%;
+margin-top: 5px;
+margin-bottom: 5px;
+border: 1px solid #eeeeee;
+font-size: 12px;
+line-height: 17px;
+color: #272727;
+font-weight: 500;
+}
+.alert {
+background: #FFE5BF url(http://www.templatesimages.com/images/BoxTube/alert.gif) no-repeat 5px 8px;
+padding: 12px 3px 12px 40px;
+clear: both;
+width: 70%;
+margin-top: 5px;
+margin-bottom: 5px;
+border: 1px solid #FFCB7D;
+font-size: 12px;
+line-height: 17px;
+color: #272727;
+font-weight: 500;
+}
+.info {
+background: #BFE5FF url(http://www.templatesimages.com/images/BoxTube/info.gif) no-repeat 5px 8px;
+padding: 12px 3px 12px 40px;
+clear: both;
+width: 70%;
+margin-top: 5px;
+margin-bottom: 5px;
+border: 1px solid #66C1FF;
+font-size: 12px;
+line-height: 17px;
+color: #272727;
+font-weight: 500;
+}
+.click {
+background: #d9e7f0 url(http://www.templatesimages.com/images/BoxTube/click.gif) no-repeat left 1px;
+padding: 12px 3px 12px 40px;
+clear: both;
+width: 70%;
+margin-top: 5px;
+margin-bottom: 5px;
+border: 1px solid #B1CDE0;
+font-size: 12px;
+line-height: 17px;
+color: #272727;
+font-weight: 500;
+}
+.pullquote-left {
+font: normal 24px/30px "Times New Roman", Georgia, Tahoma, "Trajan Pro";
+color: #000000;
+margin: 10px 12px 5px 5px;
+padding: 12px 5px;
+float: left;
+width: 30%;
+text-align: left;
+border-top: 1px solid #CCCCCC;
+border-bottom: 1px solid #CCCCCC;
+}
+.pullquote-right {
+font: normal 24px/30px "Times New Roman", Georgia, Tahoma, "Trajan Pro";
+color: #000000;
+margin: 10px 5px 0px 12px;
+padding: 12px 5px;
+float: right;
+width: 30%;
+text-align: right;
+border-top: 1px solid #CCCCCC;
+border-bottom: 1px solid #CCCCCC;
+}
+/* caption */
+.caption-img-left {
+display: block;
+margin: 10px 15px 5px 5px;
+padding: 5px;
+float: left;
+background: #F3F3F3;
+width: 40%;
+border: 1px solid #EFEFEF;
+}
+.caption-img-left p {
+font-size: 1em;
+color: #666666;
+padding: 0px;
+clear: both;
+display: block;
+margin: 0px;
+width: auto;
+}
+.keyword{color:rgb(0,0,255);}
+.comment{color:rgb(0,128,0);}
+.pp{color:rgb(0,0,255);}
+.caption-img-left em {
+font-size: 11px;
+color: #333333;
+margin: 0px;
+padding: 0px;
+clear: both;
+font-style: italic;
+font-family: Arial, Tahoma, "Lucida Sans";
+line-height: 18px;
+text-decoration: none;
+display: block;
+visibility: inherit;
+width: 100%;
+}
+.caption-img-right em {
+font-size: 11px;
+color: #333333;
+margin: 0px;
+padding: 0px;
+clear: both;
+font-style: italic;
+font-family: Arial, Tahoma, "Lucida Sans";
+line-height: 18px;
+text-decoration: none;
+display: block;
+visibility: inherit;
+width: 100%;
+}
+.caption-img-right {
+display: block;
+margin: 10px 5px 5px 15px;
+padding: 5px;
+float: right;
+background: #F3F3F3;
+width: 40%;
+border: 1px solid #EFEFEF;
+}
+.caption-img-right p {
+font-size: 1em;
+color: #666666;
+margin: 0px;
+padding: 0px;
+clear: both;
+width: auto;
+}
+.caption-img-right img {
+clear: both;
+margin: 0px;
+padding: 0px;
+display: block;
+width: 100%;
+}
+.caption-img-left img {
+clear: both;
+margin: 0px;
+padding: 0px;
+display: block;
+width: 100%;
+}
+/* caption end */
+.post-navigator .alignleft {
+float: left;
+width: 98%;
+display: block;
+position: relative;
+}
+.post-navigator .alignright {
+float: right;
+width: 98%;
+display: block;
+position: relative;
+}
+/*
+pre {
+padding: 5px;
+display: block;
+border: 3px solid #CCCCCC;
+font-family: "Courier New", Courier, monospace;
+font-size: 12px;
+color: #333333;
+background: #FFFFFF;
+margin: 8px 0px;
+clear: both;
+width: 90%;
+height: 60px;
+}
+*/
+dl {
+padding-left: 10px;
+font-size: 1.1em;
+margin-top: 8px;
+margin-bottom: 8px;
+font-family: Arial, Helvetica, sans-serif;
+}
+dt {
+margin-bottom: 5px;
+margin-top: 0px;
+font-weight: 400;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1.1em;
+}
+dd {
+font-style: italic;
+margin-bottom: 8px;
+margin-left: 0px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1.1em;
+}
+blockquote {
+clear: both;
+margin: 10px 30px 10px 15px;
+font-family: "Trebuchet MS", Tahoma, "VAGRounded BT", Verdana;
+font-size: 13px;
+color: #000000;
+#font-weight: bold;
+padding: 5px;
+line-height: 24px;
+background: #efefef
+}
+code {
+font-family: "Courier New", Courier, monospace;
+font-size: 12px;
+color: #333333;
+}
+.alignleft {
+text-align: left;
+float: left;
+}
+.alignright {
+text-align: right;
+float: right;
+}
+.center {
+text-align: center;
+margin: 0px auto;
+clear: both;
+}
+img.alignleft {
+padding: 4px;
+float: left;
+margin-right: 10px;
+margin-top: 10px;
+}
+img.alignright {
+padding: 4px;
+float: right;
+margin-top: 10px;
+margin-left: 10px;
+}
+img.center {
+padding: 4px;
+display: block;
+margin: 5px auto;
+clear: both;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: "Trebuchet MS", "Times New Roman", Tahoma;
+text-transform: capitalize;
+letter-spacing: -1px;
+}
+#wrapper {
+width: 900px;
+margin-right: auto;
+margin-left: auto;
+}
+#header {
+float: left;
+width: 900px;
+padding-top: 6px;
+position: relative;
+}
+#header img {
+border-width: 0px;
+}
+.header-left {
+float: left;
+width: 390px;
+margin: 0;
+padding-top: 5px;
+padding-bottom: 15px;
+}
+.header-left h1 {
+font-size: 30px;
+margin: 0px;
+padding: 0px;
+float: left;
+width: 390px;
+color: #A21300;
+line-height: 30px;
+}
+.header-left h1 a {
+color: #000000;
+text-decoration: none;
+}
+.header-left h1 a:hover {
+color: #990000;
+text-decoration: none;
+}
+.header-left p {
+font-size: 15px;
+#	font-weight: bold;
+margin: 0px;
+padding: 0px;
+float: left;
+width: 390px;
+line-height: 18px;
+color: #333333;
+}
+.header-right {
+float: right;
+width: 500px;
+}
+#navigator {
+background: url(http://www.templatesimages.com/images/BoxTube/navigator.gif) no-repeat center center;
+float: left;
+width: 880px;
+padding-right: 10px;
+padding-left: 10px;
+margin-top: 0px;
+margin-bottom: 8px;
+height: 32px;
+font-family: "Trebuchet MS", Tahoma, "VAGRounded BT", Verdana;
+}
+#navigator ul {
+float: left;
+margin: 0px;
+padding: 0px;
+list-style-type: none;
+}
+#navigator ul ul {
+margin: 0px;
+padding: 0px;
+float: left;
+}
+#navigator ul ul ul{
+margin: 0px;
+padding: 0px;
+float: left;
+}
+#navigator ul li {
+float: left;
+font-size: 14px;
+color: #FFFFFF;
+display: inline;
+font-weight: bold;
+margin: 0px;
+padding: 0px;
+}
+#navigator ul ul li {
+padding: 0px;
+float: left;
+font-size: 14px;
+color: #FFFFFF;
+display: inline;
+}
+#navigator ul ul ul li {
+padding: 0px;
+float: left;
+font-size: 14px;
+color: #FFFFFF;
+display: inline;
+}
+#navigator li a {
+text-align: center;
+padding-right: 12px;
+padding-left: 12px;
+color: #FFFFFF;
+text-decoration: none;
+text-transform: capitalize;
+display: block;
+margin: 0px;
+height: 32px;
+line-height: 32px;
+float: left;
+}
+#navigator li a:hover {
+color: #FFFFFF;
+text-decoration: none;
+text-transform: capitalize;
+padding-right: 12px;
+padding-left: 12px;
+background: #292929 url(http://www.templatesimages.com/images/BoxTube/navs.gif) center center;
+text-align: center;
+display: block;
+margin: 0px;
+line-height: 32px;
+height: 32px;
+float: left;
+}
+#ads-vertical {
+margin: 0px;
+padding: 5px 0px;
+float: left;
+width: 900px;
+text-align: center;
+}
+#content {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 900px;
+position: relative;
+}
+#product-blog {
+width: 615px;
+position: relative;
+padding-top: 1em;
+border-right: 1px solid #eeeeee;
+padding-bottom: 3em;
+float: left;
+}
+#product-blog-home {
+float: left;
+width: 900px;
+position: relative;
+}
+#frontpage-blog {
+float: left;
+width: 620px;
+position: relative;
+padding-top: 0.7em;
+}
+#frontpage-sidebar {
+float: right;
+width: 277px;
+position: relative;
+padding-top: 1em;
+}
+#product-blog h2 {
+float: left;
+width: 600px;
+font-size: 30px;
+line-height: 23px;
+color: #000000;
+margin: 8px 0px;
+padding: 0px;
+letter-spacing: -1px;
+}
+#product-sidebar {
+margin: 0;
+width: 277px;
+position: relative;
+padding-top: 1em;
+float: right;
+}
+#product-sidebar-home {
+float: left;
+width: 900px;
+position: relative;
+padding-top: 1em;
+}
+.product-item {
+background: url(images/products.gif) no-repeat;
+display: block;
+float: left;
+height: 181px;
+width: 179px;
+margin-right: 7px;
+margin-bottom: 5px;
+padding: 10px;
+}
+.product-item a {
+color: #A80000;
+text-decoration: underline;
+}
+.product-item a:hover {
+color: #CC0000;
+text-decoration: none;
+}
+.product-item p {
+}
+.p-items {
+float: left;
+width: 179px;
+margin: 0px 0px 3px;
+padding: 0px;
+}
+.wrap-item {
+float: left;
+width: 179px;
+}
+.p-feedback {
+float: left;
+margin: 0px;
+padding: 0px 10px 0px 17px;
+background: url(http://www.templatesimages.com/images/BoxTube/comment.gif) no-repeat left 1px;
+display: block;
+}
+.p-readmore {
+float: left;
+width: 76px;
+margin: 0px;
+padding: 0px 0px 0px 14px;
+background: url(http://www.templatesimages.com/images/BoxTube/feed.gif) no-repeat left 2px;
+display: block;
+}
+.product-item img {
+clear: both;
+width: 125px;
+height: 125px;
+border-width: 0px;
+margin-bottom: 3px;
+}
+#box1 {
+margin-right: 32px;
+}
+#box2 {
+margin-right: 34px;
+}
+#box3 {
+}
+.post-meta {
+float: left;
+width: 610px;
+padding-bottom: 25px;
+}
+.post-meta h2 {
+font-size: 32px;
+line-height: 38px;
+color: #000000;
+margin: 0px;
+padding: 0px;
+float: left;
+}
+.post-meta h2 a {
+font-size: 22px;
+color: #A21300;
+text-decoration: none;
+}
+.post-meta h2 a:hover {
+color: #000000;
+text-decoration: none;
+}
+.post-static {
+font-size: 13px;
+line-height: 19px;
+margin: 0px;
+padding: 0px 0px 2px;
+float: left;
+width: 610px;
+border-bottom: 1px solid #efefef;
+}
+.post-static a {
+color: #990000;
+text-decoration: none;
+font-weight: bold;
+}
+.post-static a:hover {
+color: #333333;
+text-decoration: underline;
+font-weight: bold;
+}
+.post-content img {
+border-width: 0px;
+margin-right: 10px;
+}
+.post-ads {
+float: left;
+width: 600px;
+font-size: 13px;
+line-height: 22px;
+overflow: hidden;
+padding: 0px;
+}
+.post-content {
+float: left;
+width: 600px;
+padding-top: 4px;
+padding-bottom: 20px;
+font-size: 15px;
+line-height: 24px;
+padding-right: 10px;
+overflow: hidden;
+color: #333333;
+font-family: "Helvetica Neue", Arial, sans-serif
+}
+.post-content ul ul {
+margin: 0px;
+padding: 0px;
+}
+.post-content h1 {
+margin: 0px 0px 5px;
+padding: 0px 0px 3px;
+font-size: 17px;
+font-weight: bold;
+line-height: 20px;
+color: #000000;
+}
+.post-content h2 {
+margin: 0px 0px 5px;
+padding: 0px 0px 3px;
+font-size: 17px;
+font-weight: bold;
+line-height: 20px;
+color: #000000;
+}
+.post-content h3 {
+margin: 0px 0px 5px;
+padding: 0px 0px 3px;
+font-size: 17px;
+font-weight: bold;
+line-height: 20px;
+color: #000000;
+}
+.post-content h4 {
+margin: 0px 0px 5px;
+padding: 0px;
+font-size: 18px;
+font-weight: bold;
+line-height: 24px;
+}
+.post-content h5 {
+margin: 0px 0px 5px;
+padding: 0px;
+font-size: 16px;
+font-weight: bold;
+line-height: 19px;
+}
+.post-content h6 {
+margin: 0px 0px 5px;
+padding: 0px;
+font-size: 14px;
+font-weight: bold;
+line-height: 18px;
+}
+.post-content a {
+color: #063E6A;
+text-decoration: underline;
+font-weight: bold;
+}
+.post-content a:hover {
+color: #004993;
+text-decoration: none;
+font-weight: bold;
+}
+.post-cat {
+padding: 3px;
+float: left;
+width: 600px;
+font-size: 13px;
+line-height: 18px;
+color: #000000;
+font-weight: bold;
+}
+.post-cat a {
+text-decoration: none;
+color: #990000;
+font-weight: normal;
+}
+.post-cat a:hover {
+text-decoration: underline;
+color: #003366;
+font-weight: normal;
+}
+.comm-count {
+float: left;
+width: 580px;
+padding-left: 18px;
+background: url(http://www.templatesimages.com/images/BoxTube/comment.gif) no-repeat left center;
+}
+.cat {
+float: left;
+width: 600px;
+padding: 0px;
+}
+.social {
+float: left;
+width: 595px;
+font-size: 13px;
+line-height: 30px;
+text-transform: capitalize;
+background: #EFEFEF;
+height: 30px;
+border: 1px solid #dedede;
+margin-top: 10px;
+}
+.social a {
+color: #666666;
+text-decoration: none;
+padding-right: 12px;
+padding-left: 12px;
+border-right: 1px solid #D6D6D6;
+}
+.social a:hover {
+color: #000000;
+text-decoration: underline;
+padding-right: 12px;
+padding-left: 12px;
+border-right: 1px solid #D6D6D6;
+}
+.clear-fix {
+float: left;
+height: 25px;
+width: 610px;
+}
+#post-navigator {
+color: #000000;
+margin: 0px;
+padding: 0px;
+float: left;
+width: 580px;
+}
+#post-navigator-single {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 580px;
+font-size: 13px;
+line-height: 20px;
+}
+.wp-pagenavi {
+float: left;
+width: 580px;
+padding-top: 8px;
+padding-bottom: 8px;
+font-size: 12px;
+}
+.pages {
+font-size: 11px;
+color: #000000;
+background: #f8f8f8;
+padding: 2px 5px;
+border: 1px solid #dddddd;
+margin-right: 5px;
+font-weight: bold;
+}
+.current {
+background: #FFFFFF;
+padding: 2px 4px;
+border: 1px solid #CCCCCC;
+margin-left: 4px;
+color: #000000;
+}
+#post-navigator a {
+color: #FFFFFF;
+background: #000000;
+padding: 2px 4px;
+margin: 0px 0px 0px 3px;
+text-decoration: none;
+border: 1px solid #666666;
+}
+#post-navigator a:hover {
+color: #000000;
+background: #EEEEEE;
+padding: 2px 4px;
+margin: 0px 0px 0px 3px;
+text-decoration: none;
+border: 1px solid #CCCCCC;
+}
+#post-navigator-single .alignleft {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 45%;
+overflow: hidden;
+height: 20px;
+}
+#post-navigator-single .alignright {
+margin: 0px;
+padding: 0px;
+float: right;
+width: 45%;
+overflow: hidden;
+height: 20px;
+}
+#post-navigator-single a {
+color: #ffffff;
+background: #000000;
+padding: 5px 8px;
+margin: 0px 0px 0px 3px;
+text-decoration: underline;
+font-weight: bold;
+}
+#post-navigator-single a:hover {
+color: #003366;
+background: #eeeeee;
+padding: 5px 8px;
+margin: 0px 0px 0px 3px;
+text-decoration: none;
+font-weight: bold;
+}
+#comments {
+margin: 0px;
+padding: 0px 0px 10px;
+float: left;
+width: 610px;
+}
+#comments h4 {
+font-size: 17px;
+color: #FFFFFF;
+margin: 20px 0px;
+padding: 5px 12px;
+float: left;
+line-height: 24px;
+display: inline;
+background: #A8A8A8;
+border: 1px solid #000000;
+}
+#comments h5 {
+font-size: 17px;
+color: #FFFFFF;
+margin: 20px 0px;
+padding: 5px 12px;
+float: left;
+line-height: 24px;
+display: inline;
+background: #999999;
+border: 1px solid #990033;
+}
+#comments h5 a {
+color: #FFFFFF;
+text-decoration: none;
+}
+#comments h5 a:hover {
+color: #FFFFFF;
+text-decoration: underline;
+}
+#comments h6 {
+font-size: 17px;
+color: #FFFFFF;
+margin: 20px 0px;
+padding: 5px 12px;
+float: left;
+line-height: 24px;
+display: inline;
+background: #999999;
+border: 1px solid #990033;
+}
+.comment-box {
+float: left;
+width: 548px;
+color: #FFFFFF;
+}
+.comment-box a {
+color: #CCCCCC;
+text-decoration: underline;
+}
+.comment-box a:hover {
+color: #EEEEEE;
+text-decoration: none;
+}
+.top-cb {
+background: url(http://www.templatesimages.com/images/BoxTube/top.gif) no-repeat bottom;
+float: left;
+height: 13px;
+width: 548px;
+}
+.center-cb {
+background: url(http://www.templatesimages.com/images/BoxTube/center.gif) repeat-y;
+float: left;
+width: 518px;
+padding-right: 15px;
+padding-left: 15px;
+font-size: 12px;
+line-height: 17px;
+}
+#comments strong {
+font-size: 17px;
+float: left;
+width: 518px;
+line-height: 17px;
+font-family: "Trebuchet MS", Verdana, sans-serif, "Courier New";
+font-weight: bold;
+}
+#comments .date {
+float: left;
+width: 518px;
+font-size: 12px;
+}
+#comments .text {
+float: left;
+width: 518px;
+padding-top: 5px;
+padding-bottom: 10px;
+font-size: 13px;
+line-height: 20px;
+}
+.bottom-cb {
+background: url(http://www.templatesimages.com/images/BoxTube/bottom.gif) no-repeat top;
+float: left;
+width: 548px;
+height: 36px;
+margin-bottom: 5px;
+}
+.comment-box-alt {
+float: left;
+width: 548px;
+color: #121212;
+}
+.comment-box-alt a {
+color: #A02C1C;
+text-decoration: underline;
+}
+.comment-box-alt a:hover {
+color: #333333;
+text-decoration: underline;
+}
+.top-cb-alt {
+background: url(http://www.templatesimages.com/images/BoxTube/top-alt.gif) no-repeat bottom;
+float: left;
+height: 13px;
+width: 548px;
+}
+.center-cb-alt {
+background: url(http://www.templatesimages.com/images/BoxTube/center-alt.gif) repeat-y;
+float: left;
+width: 518px;
+padding-right: 15px;
+padding-left: 15px;
+font-size: 12px;
+line-height: 17px;
+}
+.bottom-cb-alt {
+background: url(http://www.templatesimages.com/images/BoxTube/bottom-alt.gif) no-repeat top;
+float: left;
+width: 548px;
+height: 36px;
+margin-bottom: 5px;
+}
+.ping {
+padding: 3px;
+float: left;
+width: 550px;
+border: 1px solid #CCCCCC;
+background: #F9F9F9;
+font-size: 13px;
+line-height: 21px;
+color: #121212;
+margin-bottom: 3px;
+}
+.ping-alt {
+padding: 3px;
+float: left;
+width: 550px;
+border: 1px solid #F7f7f7;
+background: #FFFFFF;
+font-size: 13px;
+line-height: 21px;
+color: #121212;
+margin-bottom: 3px;
+}
+.ping a {
+color: #990000;
+text-decoration: none;
+}
+.ping-alt a {
+color: #990000;
+text-decoration: none;
+}
+#comment-form {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 610px;
+}
+#comment-form p {
+margin-bottom: 10px;
+margin-top: 0px;
+font-size: 14px;
+color: #000000;
+font-family: "Trebuchet MS", Verdana, sans-serif, "Courier New";
+font-weight: bold;
+}
+#comment-form label {
+font-size: 15px;
+color: #000000;
+font-weight: bold;
+font-family: "Trebuchet MS", Arial, Verdana, Helvetica, sans-serif;
+line-height: 18px;
+margin: 0px;
+padding: 0px;
+}
+.sb-box {
+width: 300px;
+padding: 7px;
+border: 1px solid #CCCCCC;
+font-size: 13px;
+color: #000000;
+}
+#comment-form .sbb {
+font-family: "Trebuchet MS", Tahoma, "VAGRounded BT", Verdana;
+font-size: 14px;
+font-weight: bold;
+color: #000000;
+margin: 0px;
+padding: 5px 12px;
+}
+#comment-form #policy {
+font-size: 13px;
+color: #666666;
+margin-top: 12px;
+margin-bottom: 0px;
+font-family: Arial, Tahoma, "Lucida Sans";
+line-height: 20px;
+font-weight: normal;
+}
+.com-a {
+width: 520px;
+padding: 10px;
+height: 300px;
+font-size: 13px;
+line-height: 18px;
+color: #000000;
+margin-top: 5px;
+border: 1px solid #CCCCCC;
+}
+.sidebar-box {
+float: left;
+width: 277px;
+background: url(http://img152.imageshack.us/img152/3199/bottomsidebarzj8.gif) no-repeat bottom;
+padding-bottom: 25px;
+color: #222222;
+margin-bottom: 10px;
+}
+.sidebar-box select {
+margin: 0px;
+padding: 4px;
+width: 210px;
+border: 1px solid #dedede;
+font-size: 13px;
+color: #000000;
+background: #FFFFFF;
+font-family: "Trebuchet MS", Tahoma, "VAGRounded BT", Verdana;
+line-height: 120%;
+font-weight: bold;
+}
+.sidebar-box table {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 97%;
+}
+.sidebar-box h2 {
+font-size: 17px;
+line-height: 28px;
+color: #FFFFFF;
+background: url(http://www.templatesimages.com/images/BoxTube/main-sidebar.gif) no-repeat bottom;
+margin: 0px;
+float: left;
+height: 34px;
+width: 237px;
+padding-left: 40px;
+font-family: "Trebuchet MS", Verdana, sans-serif, "Courier New";
+}
+.sidebar-box .widget-content {
+background: url(http://www.templatesimages.com/images/BoxTube/bd-sidebar.gif) repeat-y;
+margin: 0px;
+padding: 10px 20px;
+float: left;
+width: 237px;
+font-size: 13px;
+line-height: 18px;
+color: #000000;
+}
+.sidebar-box .widget-content a {
+color: #A21300;
+text-decoration: none;
+}
+.sidebar-box .widget-content a:hover {
+color: #A21300;
+text-decoration: underline;
+}
+.sidebar-box .widget-content img {
+margin-top: 5px;
+border-width: 0px;
+}
+.list {
+background: url(http://www.templatesimages.com/images/BoxTube/bd-sidebar.gif) repeat-y;
+margin: 0px;
+padding: 10px 20px 5px;
+float: left;
+width: 237px;
+list-style-type: none;
+}
+.sidebar-box img {
+border-width: 0px;
+}
+.sidebar-box ul, .sidebar-box ol {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 227px;
+list-style-type: none;
+}
+.sidebar-box li {
+font-size: 13px;
+line-height: 18px;
+color: #666666;
+margin: 0px 0px 5px;
+padding: 0px;
+float: left;
+width: 237px;
+}
+.sidebar-box ul li {
+font-size: 13px;
+line-height: 18px;
+color: #666666;
+margin: 5px 0px 0px;
+padding: 0px;
+float: left;
+width: 227px;
+}
+.sidebar-box li a {
+background: url(http://www.templatesimages.com/images/BoxTube/dot.gif) no-repeat left 3px;
+padding-left: 10px;
+color: #000000;
+text-decoration: none;
+margin: 0px;
+padding-top: 1px;
+padding-bottom: 1px;
+}
+.sidebar-box li a:hover {
+background: url(http://www.templatesimages.com/images/BoxTube/dot.gif) no-repeat left 3px;
+padding-left: 10px;
+color: #A21300;
+text-decoration: underline;
+padding-top: 1px;
+padding-bottom: 1px;
+}
+.sidebar-box li table {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 95%;
+}
+.nolist {
+background: url(http://www.templatesimages.com/images/BoxTube/bd-sidebar.gif) repeat-y;
+margin: 0px;
+padding: 10px 20px 5px;
+float: left;
+width: 237px;
+list-style-type: none;
+}
+.nolist ul {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 227px;
+list-style-type: none;
+}
+.nolist li {
+font-size: 13px;
+line-height: 24px;
+color: #999999;
+margin: 0px 0px 5px;
+padding: 0px;
+float: left;
+width: 237px;
+}
+.nolist ul li {
+font-size: 13px;
+line-height: 24px;
+color: #666666;
+margin: 5px 0px 0px;
+padding: 0px;
+float: left;
+width: 227px;
+}
+.nolist li a {
+color: #000000;
+text-decoration: none;
+margin: 0px;
+padding-top: 1px;
+padding-bottom: 1px;
+}
+.nolist li img {
+border-width: 0px;
+}
+.nolist li a:hover {
+color: #A21300;
+text-decoration: underline;
+padding-top: 1px;
+padding-bottom: 1px;
+}
+#getflickr {
+background: url(http://www.templatesimages.com/images/BoxTube/bd-sidebar.gif) repeat-y;
+margin: 0px;
+padding: 10px 20px 5px;
+float: left;
+width: 237px;
+list-style-type: none;
+}
+#getflickr  li {
+font-size: 13px;
+line-height: 24px;
+color: #999999;
+margin: 0px 0px 5px;
+padding: 0px;
+float: left;
+}
+#getflickr li img {
+margin: 0px 10px 10px 0px;
+padding: 5px;
+float: left;
+height: 96px;
+width: 96px;
+border: 1px solid #DEDEDE;
+}
+#getflickr li img:hover {
+margin: 0px 10px 10px 0px;
+padding: 5px;
+float: left;
+height: 96px;
+width: 96px;
+border: 1px solid #CCCCCC;
+background: #f9f9f9;
+}
+.adlist {
+background: url(http://www.templatesimages.com/images/BoxTube/bd-sidebar.gif) repeat-y;
+margin: 0px;
+padding: 10px 5px 5px 10px;
+float: left;
+width: 262px;
+list-style-type: none;
+}
+.adlist img {
+border-width: 0px;
+margin: 0px 5px 5px 0px;
+padding: 0px;
+float: left;
+}
+.adlist p {
+margin: 0px;
+padding: 8px 0px 0px 8px;
+float: left;
+width: 254px;
+font-size: 13px;
+line-height: 18px;
+color: #000000;
+}
+.adlist p a {
+color: #990000;
+text-decoration: underline;
+}
+.adlist p a:hover {
+color: #CC0000;
+text-decoration: none;
+}
+#themeswitcher {
+background: url(http://www.templatesimages.com/images/BoxTube/bd-sidebar.gif) repeat-y;
+margin: 0px;
+padding: 4px 20px 0px;
+float: left;
+width: 237px;
+font-size: 11px;
+line-height: 18px;
+color: #232323;
+list-style-type: none;
+}
+#themeswitcher select {
+font-family: "Trebuchet MS", Verdana, sans-serif, "Courier New";
+font-size: 12px;
+font-weight: bold;
+color: #222222;
+width: 230px;
+border-top: 1px solid #DADADA;
+border-right: 1px solid #eeeeee;
+border-bottom: 1px solid #eeeeee;
+border-left: 1px solid #eeeeee;
+}
+.sidebar-box form {
+background: url(http://www.templatesimages.com/images/BoxTube/bd-sidebar.gif) repeat-y;
+margin: 0px;
+padding: 5px 20px 0px;
+float: left;
+width: 237px;
+font-size: 11px;
+line-height: 18px;
+color: #232323;
+list-style-type: none;
+}
+.sidebar-box p {
+margin-top: 5px;
+margin-bottom: 0px;
+}
+.sbm-b {
+padding: 1px;
+width: 230px;
+font-family: "Trebuchet MS", Verdana, sans-serif, "Courier New";
+font-size: 13px;
+font-weight: bold;
+color: #111111;
+border: 1px solid #CCCCCC;
+}
+#footer {
+background: url(http://www.templatesimages.com/images/BoxTube/footer.gif) no-repeat;
+float: left;
+height: 83px;
+width: 880px;
+margin-bottom: 5px;
+margin-top: 5px;
+padding: 15px 10px 10px;
+font-size: 13px;
+line-height: 20px;
+color: #000000;
+text-align: center;
+}
+#footer-bot img {
+border-width: 0px!important;
+}
+#footer a {
+color: #990000;
+text-decoration: none;
+font-weight: bold;
+}
+#footer a:hover {
+color: #910000;
+text-decoration: underline;
+font-weight: bold;
+}
+#footer-bot {
+margin: 0px;
+padding: 0px 0px 5px;
+float: left;
+width: 900px;
+position: relative;
+}
+#footer-bot .sidebar-box {
+float: left;
+width: 277px;
+background: url(http://www.templatesimages.com/images/BoxTube/bottom-sidebar.gif) no-repeat 11px bottom;
+padding-bottom: 25px;
+color: #222222;
+margin-bottom: 0px;
+padding-right: 11px;
+padding-left: 11px;
+}
+/* s-rank */
+#sr_wrapper {
+font-family:Verdana, Arial, "Times New Roman", sans-serif;
+font-size: 11px;
+margin:0px 0 10px;
+display:block;
+}
+#sr_wrapper a, #sr_wrapper a:hover, #sr_wrapper a:visited {
+text-decoration:none;
+font-size:11px;
+background:none;
+border: 0;
+margin: 0;
+line-height:20px;
+}
+#sr_about {
+font-size:8px;
+clear:none;
+display:block;
+margin-left:5px;
+margin-top:25px;
+width:70px;
+}
+.sr_rank_container {
+width: 70px;
+height: 30px;
+display: block;
+text-align: center;
+float: left;
+margin-left: 0px;
+margin-right: 12px;
+}
+.sr_rank_bar {
+width:42px;
+border: 0;
+padding: 0;
+margin: 0;
+font-size: 0;
+display: block;
+}
+.sr_rank_border {
+width:70px;
+border: 1px solid #dedede;
+padding: 0;
+margin: 0;
+text-align: center;
+display: block;
+}
+.sr_rank_bar_filled {
+height: 3px;
+padding: 0;
+margin: 0;
+border: 0;
+display: block;
+}
+.sr_rank_text {
+line-height:1.3em;
+}
+.wp-polls {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 96%;
+}
+.wp-polls form {
+margin: 0px;
+padding: 0px;
+float: left;
+width: 100%;
+}
+
+--></style>
+<!--SYNTAX HIGHLIGHTER STARTS-->
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shCore.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushCpp.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushCSharp.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushCss.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushJava.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushJScript.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushPhp.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushPython.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushRuby.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushSql.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushVb.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushXml.js" type="text/javascript"></script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/shBrushPerl.js" type="text/javascript"></script>
+<script language="javascript">
+SyntaxHighlighter.config.bloggerMode = true;
+SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+<!--SYNTAX HIGHLIGHTER ENDS-->
+<!--FORUM START-->
+<!--FORUM ENDS-->
+<script type="text/javascript">var a=navigator,b="userAgent",c="indexOf",f="&m=1",g="(^|&)m=",h="?",i="?m=1";function j(){var d=window.location.href,e=d.split(h);switch(e.length){case 1:return d+i;case 2:return 0<=e[1].search(g)?null:d+f;default:return null}}if(-1!=a[b][c]("Mobile")&&-1!=a[b][c]("WebKit")&&-1==a[b][c]("iPad")||-1!=a[b][c]("Opera Mini")||-1!=a[b][c]("IEMobile")){var k=j();k&&window.location.replace(k)};
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script><script type="text/javascript" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/google_top_exp.js"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border-spacing:0;border:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+/* @noflip */
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+/* @noflip */
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+/* @noflip */
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+/* @noflip */
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yD/x/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;left:-10000px;overflow:visible;position:absolute;top:-10000px;width:100%
+}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yc/x/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0 0, 0 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0 0, 0 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yJ/x/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{position:relative;display:-moz-inline-block;display:inline-block}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify;vertical-align:text-bottom}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yJ/x/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_button_simple,
+.fb_button_simple_rtl{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yH/x/eIpbnVKI9lR.png);background-repeat:no-repeat;cursor:pointer;outline:none;text-decoration:none}
+.fb_button_simple_rtl{background-position:right 0}
+.fb_button_simple .fb_button_text{margin:0 0 0 20px;padding-bottom:1px}
+.fb_button_simple_rtl .fb_button_text{margin:0 10px 0 0}
+a.fb_button_simple:hover .fb_button_text,
+a.fb_button_simple_rtl:hover .fb_button_text,
+.fb_button_simple:hover .fb_button_text,
+.fb_button_simple_rtl:hover .fb_button_text{text-decoration:underline}
+.fb_button,
+.fb_button_rtl{background:#29447e url(http://static.ak.fbcdn.net/rsrc.php/v2/yl/x/FGFbc80dUKj.png);background-repeat:no-repeat;cursor:pointer;display:inline-block;padding:0 0 0 1px;text-decoration:none;outline:none}
+.fb_button .fb_button_text,
+.fb_button_rtl .fb_button_text{background:#5f78ab url(http://static.ak.fbcdn.net/rsrc.php/v2/yl/x/FGFbc80dUKj.png);border-top:solid 1px #879ac0;border-bottom:solid 1px #1a356e;color:#fff;display:block;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-weight:bold;padding:2px 6px 3px 6px;margin:1px 1px 0 21px;text-shadow:none}
+a.fb_button,
+a.fb_button_rtl,
+.fb_button,
+.fb_button_rtl{text-decoration:none}
+a.fb_button:active .fb_button_text,
+a.fb_button_rtl:active .fb_button_text,
+.fb_button:active .fb_button_text,
+.fb_button_rtl:active .fb_button_text{border-bottom:solid 1px #29447e;border-top:solid 1px #45619d;background:#4f6aa3;text-shadow:none}
+.fb_button_xlarge,
+.fb_button_xlarge_rtl{background-position:left -60px;font-size:24px;line-height:30px}
+.fb_button_xlarge .fb_button_text{padding:3px 8px 3px 12px;margin-left:38px}
+a.fb_button_xlarge:active{background-position:left -99px}
+.fb_button_xlarge_rtl{background-position:right -268px}
+.fb_button_xlarge_rtl .fb_button_text{padding:3px 8px 3px 12px;margin-right:39px}
+a.fb_button_xlarge_rtl:active{background-position:right -307px}
+.fb_button_large,
+.fb_button_large_rtl{background-position:left -138px;font-size:13px;line-height:16px}
+.fb_button_large .fb_button_text{margin-left:24px;padding:2px 6px 4px 6px}
+a.fb_button_large:active{background-position:left -163px}
+.fb_button_large_rtl{background-position:right -346px}
+.fb_button_large_rtl .fb_button_text{margin-right:25px}
+a.fb_button_large_rtl:active{background-position:right -371px}
+.fb_button_medium,
+.fb_button_medium_rtl{background-position:left -188px;font-size:11px;line-height:14px}
+a.fb_button_medium:active{background-position:left -210px}
+.fb_button_medium_rtl{background-position:right -396px}
+.fb_button_text_rtl,
+.fb_button_medium_rtl .fb_button_text{padding:2px 6px 3px 6px;margin-right:22px}
+a.fb_button_medium_rtl:active{background-position:right -418px}
+.fb_button_small,
+.fb_button_small_rtl{background-position:left -232px;font-size:10px;line-height:10px}
+.fb_button_small .fb_button_text{padding:2px 6px 3px;margin-left:17px}
+a.fb_button_small:active,
+.fb_button_small:active{background-position:left -250px}
+.fb_button_small_rtl{background-position:right -440px}
+.fb_button_small_rtl .fb_button_text{padding:2px 6px;margin-right:18px}
+a.fb_button_small_rtl:active{background-position:right -458px}
+.fb_share_count_wrapper{position:relative;float:left}
+.fb_share_count{background:#b0b9ec none repeat scroll 0 0;color:#333;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;text-align:center}
+.fb_share_count_inner{background:#e8ebf2;display:block}
+.fb_share_count_right{margin-left:-1px;display:inline-block}
+.fb_share_count_right .fb_share_count_inner{border-top:solid 1px #e8ebf2;border-bottom:solid 1px #b0b9ec;margin:1px 1px 0 1px;font-size:10px;line-height:10px;padding:2px 6px 3px;font-weight:bold}
+.fb_share_count_top{display:block;letter-spacing:-1px;line-height:34px;margin-bottom:7px;font-size:22px;border:solid 1px #b0b9ec}
+.fb_share_count_nub_top{border:none;display:block;position:absolute;left:7px;top:35px;margin:0;padding:0;width:6px;height:7px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yP/x/bSOHtKbCGYI.png)}
+.fb_share_count_nub_right{border:none;display:inline-block;padding:0;width:5px;height:10px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/i_oIVTKMYsL.png);vertical-align:top;background-position:right 5px;z-index:10;left:2px;margin:0 2px 0 0;position:relative}
+.fb_share_no_count{display:none}
+.fb_share_size_Small .fb_share_count_right .fb_share_count_inner{font-size:10px}
+.fb_share_size_Medium .fb_share_count_right .fb_share_count_inner{font-size:11px;padding:2px 6px 3px;letter-spacing:-1px;line-height:14px}
+.fb_share_size_Large .fb_share_count_right .fb_share_count_inner{font-size:13px;line-height:16px;padding:2px 6px 4px;font-weight:normal;letter-spacing:-1px}
+.fb_share_count_hidden .fb_share_count_nub_top,
+.fb_share_count_hidden .fb_share_count_top,
+.fb_share_count_hidden .fb_share_count_nub_right,
+.fb_share_count_hidden .fb_share_count_right{visibility:hidden}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+/* @noflip */
+.fbpluginrecommendationsbarleft{left:10px}
+/* @noflip */
+.fbpluginrecommendationsbarright{right:10px}</style></head>
+<body>
+<div class="navbar section" id="navbar"><div class="widget Navbar" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" width="100%" id="navbar-iframe" name="navbar-iframe" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/navbar.htm"></iframe></div>
+<script type="text/javascript" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+        gapi.load("iframes-styles-bubble", function() {
+          if (window.iframes && iframes.open) {
+            iframes.open(
+                '//www.blogger.com/navbar.g?targetBlogID\0756038272452605714757\46blogName\75PROGRAMMING+INTERVIEWS\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75TAN\46layoutType\75LAYOUTS\46searchRoot\75http://tech-queries.blogspot.com/search\46blogLocale\75en\46v\0752\46homepageUrl\75http://tech-queries.blogspot.com/\46targetPostID\0753234023274542396938\46blogPostOrPageUrl\75http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html\46vt\07553246377032790532',
+                {
+                  container: "navbar-iframe-container",
+                  id: "navbar-iframe"
+                },
+                {
+                });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id="wrapper">
+<!-- skip links for text browsers -->
+<span id="skiplinks" style="display:none;">
+<a href="http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html#main">skip to main </a> |
+      <a href="http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html#sidebar">skip to sidebar</a>
+</span>
+<div id="header">
+<div class="header-left">
+<div class="header-left section" id="header-left"><div class="widget Header" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://tech-queries.blogspot.in/">PROGRAMMING INTERVIEWS</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>
+</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div class="header-right">
+<div class="header-right section" id="header-right"></div>
+</div>
+</div>
+<div id="navigator">
+<ul>
+<li><a href="http://tech-queries.blogspot.in/"> Home </a></li>
+<li class="page_item"><a href="http://tech-queries.blogspot.com/p/about-programming-interviews.html" title="About"> About </a></li>
+<li class="page_item"><a href="http://tech-queries.blogspot.com/p/discussions.html" title="Discuss"> Discuss </a></li>
+<li class="page_item"><a href="http://akashthoughts.blogspot.com/" title="Confused Soul"> My Personal Blog </a></li>
+</ul>
+</div>
+<div id="ads-vertical">
+<div class="adsense-top-gad section" id="adsense-top-gad"></div>
+</div>
+<!--FORUM START-->
+<!--FORUM ENDS-->
+<div id="content">
+<div id="product-blog">
+<div class="main section" id="main"><div class="widget Blog" id="Blog1">
+<div class="blog-posts hfeed">
+<!-- google_ad_section_start -->
+<div class="post-meta">
+<a name="3234023274542396938"></a>
+<h2 class="post-title entry-title">
+<a href="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/Minimum number of coins   PROGRAMMING INTERVIEWS.htm">Minimum number of coins</a>
+</h2>
+<div class="post-static">
+
+          Posted by Akash
+
+        in Monday, April 20, 2009
+<span class="item-control blog-admin pid-1936941811">
+<a href="http://www.blogger.com/post-edit.g?blogID=6038272452605714757&postID=3234023274542396938&from=pencil" title="Edit Post">
+<img alt="" class="icon-action" height="18" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon18_edit_allbkg.gif" width="18">
+</a>
+</span>
+</div>
+<div style="float:right;padding:4px;">
+<script type="text/javascript">
+tweetmeme_style = 'compact';
+tweetmeme_url = 'http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html';
+tweetmeme_source = 'akashag1001';
+</script>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/button.js" type="text/javascript"></script>
+</div>
+<iframe allowtransparency="true" frameborder="0" scrolling="no" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/like.htm" style="border:none; overflow:hidden; width:450px; height:40px;"></iframe>
+<div class="post-header-line-1"></div>
+<div class="reaction-buttons">
+</div>
+<span class="star-ratings">
+</span>
+<div class="post-content">
+<p></p><div style="text-align: justify;"><br></div><span style="font-weight: bold;"><div style="text-align: justify;"><span class="Apple-style-span" style="font-weight: normal; "><span style="font-weight: bold;">Question: </span>You are given some denominations of coins in an array (int denom[])and infinite supply of all of them. Given an amount (int amount), find the minimum number of coins required to get the exact amount.</span></div></span><div style="text-align: justify;">(<a href="http://tech-queries.blogspot.com/2009/04/amazon-interview.html">4th Question form Amazon 5th F2F</a>)</div><div style="text-align: justify;"><br></div><span style="font-weight: bold;"><div style="text-align: justify;"><span class="Apple-style-span" style="font-weight: normal; "><span style="font-weight: bold;">Answer:</span> Let's rephrase the question like this:</span></div></span><div style="text-align: justify;">"Given a list of N coins, their values (<b>V<sub>1</sub></b>, <b>V<sub>2</sub></b>, ... , <b>V<sub>N</sub></b>), and the total sum <b>S</b>. Find the minimum number of coins the sum of which is <b>S</b> (we can use as many coins of one type as we want), or report that it's not possible to select coins in such a way that they sum up to <b>S</b>."</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">It is simple - for each coin <b>j, V<sub>j</sub>≤i</b>, look at the minimum number of coins found for the <b>i-V<sub>j</sub></b>sum (we have already found it previously). Let this number be <b>m</b>. If <b>m+1</b> is less than the minimum number of coins already found for current sum <b>i</b>, then we write the new result for it.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">For a better understanding let's take this example:</div><div style="text-align: justify;">Given coins with values 1, 3, and 5.And the sum <b>S</b> is set to be 11.</div><div style="text-align: justify;">First of all we mark that for state 0 (sum 0) we have found a solution with a minimum number of 0 coins. We then go to sum 1. First, we mark that we haven't yet found a solution for this one (a value of Infinity would be fine). Then we see that only coin 1 is less than or equal to the current sum. Analyzing it, we see that for sum 1-<b>V<sub>1</sub></b>= 0 we have a solution with 0 coins. Because we add one coin to this solution, we'll have a solution with 1 coin for sum 1. It's the only solution yet found for this sum. We write (save) it. Then we proceed to the next state - <b>sum 2</b>. We again see that the only coin which is less or equal to this sum is the first coin, having a value of 1. The optimal solution found for sum (2-1) = 1 is coin 1. This coin 1 plus the first coin will sum up to 2, and thus make a sum of 2 with the help of only 2 coins.This is the best and only solution for sum 2. Now we proceed to sum 3. We now have 2 coins which are to be analyzed - first and second one, having values of 1 and 3. Let's see the first one. There exists a solution for sum 2 (3 - 1) and therefore we can construct from it a solution for sum 3 by adding the first coin to it. Because the best solution for sum 2 that we found has 2 coins, the new solution for sum 3 will have 3 coins. Now let's take the second coin with value equal to 3. The sum for which this coin needs to be added to make 3 , is 0. We know that sum 0 is made up of 0 coins. Thus we can make a sum of 3 with only one coin - 3. We see that it's better than the previous found solution for sum 3 , which was composed of 3 coins. We update it and mark it as having only 1 coin. The same we do for sum 4, and get a solution of 2 coins - 1+3. And so on.</div><span style="font-weight: bold;"><div style="text-align: justify;">Pseudocode:</div></span><div><span></span><b><img src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/Dyn+Prog.png" style="text-align: justify;display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; cursor: pointer; width: 335px; height: 174px; " border="0" alt="" id="BLOGGER_PHOTO_ID_5537176978624138034"></b><span class="Apple-style-span" style="font-family: monospace; font-size: 13px; white-space: pre; "><div style="text-align: justify;">Here are the solutions found for all sums:</div></span><table class="formFrame" width="400" align="center" cellpadding="5" cellspacing="0" style="text-align: justify;"><tbody><tr><td style="font-weight: bold;" class="sidebarTitle" nowrap="nowrap"><br></td></tr></tbody></table><blockquote><table style="text-align: justify;width: 577px; height: 387px; " class="formFrame" align="center" cellpadding="5" cellspacing="0"><tbody><tr><td style="font-weight: bold;" class="sidebarTitle" nowrap="nowrap">Sum</td>       <td style="vertical-align: top;"><br></td><td style="font-weight: bold;" class="sidebarTitle" nowrap="nowrap">Min. nr. of coins</td>       <td style="font-weight: bold;" class="sidebarTitle" nowrap="nowrap">Coin value added to a smaller sum to<br>obtain this sum (it is displayed in brackets)</td>    </tr>    <tr>       <td class="sidebarText">0</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">0</td>       <td style="text-align: center;" class="sidebarText">-</td>    </tr>    <tr>       <td class="sidebarText">1</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">1</td>       <td style="text-align: center;" class="sidebarText">1 (0)</td>    </tr>    <tr>       <td class="sidebarText">2</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">2</td>       <td style="text-align: center;" class="sidebarText">1 (1)</td>    </tr>    <tr>       <td class="sidebarText">3</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">1</td>       <td style="text-align: center;" class="sidebarText">3 (0)</td>    </tr>    <tr>       <td class="sidebarText">4</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">2</td>       <td style="text-align: center;" class="sidebarText">1 (3)</td>    </tr>    <tr>       <td class="sidebarText">5</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">1</td>       <td style="text-align: center;" class="sidebarText">5 (0)</td>    </tr>    <tr>        <td class="sidebarText">6</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">2</td>       <td style="text-align: center;" class="sidebarText">3 (3)</td>    </tr>    <tr>       <td class="sidebarText">7</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">3</td>       <td style="text-align: center;" class="sidebarText">1 (6)</td>    </tr>    <tr>       <td class="sidebarText">8</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">2</td>       <td style="text-align: center;" class="sidebarText">3 (5)</td>    </tr>    <tr>       <td class="sidebarText">9</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">3</td>       <td style="text-align: center;" class="sidebarText">1 (8)</td>    </tr>    <tr>       <td class="sidebarText">10</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">2</td>       <td style="text-align: center;" class="sidebarText">5 (5)</td>    </tr>    <tr>       <td class="sidebarText">11</td>       <td style="vertical-align: top;"><br></td><td style="text-align: center;" class="sidebarText">3</td>       <td style="text-align: center;" class="sidebarText">1 (10)</td></tr></tbody></table></blockquote><div style="text-align: justify;">As a result we have found a solution of 3 coins which sum up to 11.</div><div style="text-align: justify;"><br></div><div style="text-align: justify;">Additionally, by tracking data about how we got to a certain sum from a previous one, we can find what coins were used in building it. For example: to sum 11 we got by adding the coin with value 1 to a sum of 10. To sum 10 we got from 5. To sum 5 we got from 0. Thus, we find the coins used are: 1, 5 and 5.</div></div><br><i><b style="color:RED">Subscribe</b> - To get an automatic feed of all future posts <a href="http://feeds.feedburner.com/tech-queries">subscribe here</a>, or to receive them via email <a href="http://feedburner.google.com/fb/a/mailverify?uri=tech-queries">go here and enter your email address in the box</a>. You can also <a href="https://www.facebook.com/ProgrammingInterviews">like us on facebook</a> and follow me on Twitter <a href="https://twitter.com/akashag1001">@akashag1001</a>.</i>
+<div class="post-share-buttons">
+<br>
+<a class="goog-inline-block share-button sb-email" href="http://www.blogger.com/share-post.g?blogID=6038272452605714757&postID=3234023274542396938&target=email" target="_blank" title="Email This">
+<span class="share-button-link-text">Email This</span>
+</a><a class="goog-inline-block share-button sb-blog" href="http://www.blogger.com/share-post.g?blogID=6038272452605714757&postID=3234023274542396938&target=blog" onclick="window.open(this.href, &quot;_blank&quot;, &quot;height=270,width=475&quot;); return false;" target="_blank" title="BlogThis!">
+<span class="share-button-link-text">BlogThis!</span>
+</a><a class="goog-inline-block share-button sb-twitter" href="http://www.blogger.com/share-post.g?blogID=6038272452605714757&postID=3234023274542396938&target=twitter" target="_blank" title="Share to Twitter">
+<span class="share-button-link-text">Share to Twitter</span>
+</a><a class="goog-inline-block share-button sb-facebook" href="http://www.blogger.com/share-post.g?blogID=6038272452605714757&postID=3234023274542396938&target=facebook" onclick="window.open(this.href, &quot;_blank&quot;, &quot;height=430,width=640&quot;); return false;" target="_blank" title="Share to Facebook">
+<span class="share-button-link-text">Share to Facebook</span>
+</a><div class="goog-inline-block dummy-container"><div style="height: 20px; width: 300px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial;" id="___plusone_0"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1360256435329" name="I0_1360256435329" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/fastbutton.htm" allowtransparency="true" data-gapiattached="true" title="+1"></iframe></div></div>
+</div>
+<p></p>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1">
+<div class="post-cat">
+<div class="cat">
+
+          under: 
+<a href="http://tech-queries.blogspot.in/search/label/Algorithm" rel="tag">Algorithm</a>,
+<a href="http://tech-queries.blogspot.in/search/label/Dynamic%20programming" rel="tag">Dynamic programming</a>
+<script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/all.js">
+</script>
+<fb:comments href="http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html" num_posts="5" width="600" fb-xfbml-state="rendered" class="fb_iframe_widget"><span style="height: 160px; width: 600px;"><iframe id="f3ecd7f0e" name="f4b7ff20c" scrolling="no" style="border: none; overflow: hidden; height: 160px; width: 600px;" class="fb_ltr" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/comments.htm"></iframe></span></fb:comments>
+</div>
+</div>
+<span class="post-icons">
+</span>
+</div>
+<div class="post-footer-line post-footer-line-2">
+</div>
+<div class="post-footer-line post-footer-line-3"></div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>
+5 Comments
+        
+</h4>
+<div class="comment-list">
+<div class="comment-box-alt"><div class="top-cb-alt"></div>
+<div class="center-cb-alt">
+<div class="commentcount"></div>
+<strong>
+Anonymous
+<span class="item-control blog-admin pid-25289457">
+<a href="http://www.blogger.com/delete-comment.g?blogID=6038272452605714757&postID=7585097065055841245" title="Delete Comment">
+<img src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon_delete13.gif" style="border:none;">
+</a>
+</span>
+</strong>
+<div class="date"><a href="http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html#comment-7585097065055841245" title="comment permalink">
+November 8, 2010 at 5:59 PM
+</a></div>
+<div class="text">
+<p>Hi!<br><br>First of all: Nice Blog!<br>Second: Nice Article.<br><br>However, there is something in your pseudocode which bothers me: what kind of condition is "Min[i-Vj]+1". I mean it can't be if this yields a non-zero value, because it will always yield a non-zero value... I'm kind of confused, because I guess that it is more or less THE line to solve whole the problem, isn't it?<br><br>Kind Regards.</p>
+</div>
+</div><div class="bottom-cb-alt"></div></div>
+<div class="comment-box"><div class="top-cb"></div>
+<div class="center-cb">
+<div class="commentcount"></div>
+<strong>
+<a href="http://www.blogger.com/profile/13518869945231560892">Akash</a>
+<span class="item-control blog-admin pid-1936941811">
+<a href="http://www.blogger.com/delete-comment.g?blogID=6038272452605714757&postID=4292894517517130427" title="Delete Comment">
+<img src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon_delete13.gif" style="border:none;">
+</a>
+</span>
+</strong>
+<div class="date"><a href="http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html#comment-4292894517517130427" title="comment permalink">
+November 8, 2010 at 6:12 PM
+</a></div>
+<div class="text">
+<p>Thanks Anonymous for pointing that out.<br><br>It was coz of editing problem in blogger. I have pasted a screenshot now, please re-read.</p>
+</div>
+</div><div class="bottom-cb"></div></div>
+<div class="comment-box-alt"><div class="top-cb-alt"></div>
+<div class="center-cb-alt">
+<div class="commentcount"></div>
+<strong>
+<a href="http://www.blogger.com/profile/14529275937717701146">Sree</a>
+<span class="item-control blog-admin pid-211411759">
+<a href="http://www.blogger.com/delete-comment.g?blogID=6038272452605714757&postID=4853211558706602254" title="Delete Comment">
+<img src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon_delete13.gif" style="border:none;">
+</a>
+</span>
+</strong>
+<div class="date"><a href="http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html#comment-4853211558706602254" title="comment permalink">
+December 5, 2010 at 5:32 PM
+</a></div>
+<div class="text">
+<p>Isn't this a subset sum problem??</p>
+</div>
+</div><div class="bottom-cb-alt"></div></div>
+<div class="comment-box-alt"><div class="top-cb-alt"></div>
+<div class="center-cb-alt">
+<div class="commentcount"></div>
+<strong>
+Anonymous
+<span class="item-control blog-admin pid-2019105577">
+<a href="http://www.blogger.com/delete-comment.g?blogID=6038272452605714757&postID=8568917790437969222" title="Delete Comment">
+<img src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon_delete13.gif" style="border:none;">
+</a>
+</span>
+</strong>
+<div class="date"><a href="http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html#comment-8568917790437969222" title="comment permalink">
+November 23, 2012 at 3:17 PM
+</a></div>
+<div class="text">
+<p>What is the runtime complexity of your solution? I have a solution in O(n*S) where n is the number of coins available and S the sum that needs to be obtained.<br><br>I couldn't follow your explanation. So I'm going to put forth my own here. You may want to give it a read.<br><br>Let the denomination of all the coins be available in an array C. The size of this array is obviously going to be n. In your example this array is [1, 3, 5]. S = 11. Also assume that the array is sorted in increasing order.<br><br>Let's start with the greatest denomination available. A cashier can pick 0 or 1 or 2 or 3... coins of denomination 5. So let's do that. <br><br>(i) Pick 0 coins with value=5. You now have to figure out the sum S from the rest of the array, i.e. from index 0 to the end (n-2)<br>(ii) Pick 1 coin with value=5. You now have to find the sum S-5 from the rest of the array, i.e. from index 0 to the end (n-2)<br>(iii) Pick 2 coins with value=5. You now have to find the sum S-10 from the rest of the array, i.e. from index 0 to the end (n-2)<br><br>Obviously, you can't pick 3 coins of denomination 5, because then you will exceed the sum.<br><br>The three subproblems are going to give you three results, pick the one with the minimum # of coins.<br><br>Formally, this recurrence can be stated as :<br><br>P(i, j) = min { k + P(i-1, j-k*C[i] } 0 &lt;= k &lt;= floor(j/C[i])<br><br>P(i, j) is the minimum # of coins required to build a sum j from the coins from index 0 to i.<br><br>The base condition is P(0, x) and can be computed as <br><br>y = 0;<br>if (x % C[0] == 0) {<br>&nbsp;&nbsp;y = x/C[0];<br>}<br>return y;<br><br>P(0, 0) = 0;<br><br>Let's run the program on S=11, C=[1, 3, 5]<br>P(2, 11) = min{P(1, 11), 1+P(1, 6), 2+P(1,1)}<br>Now calculate P(1, 11)<br>P(1, 11) = min{P(0, 11), 1 + P(0, 8), 2 + P(0, 5), 3 + P(0, 2)}<br>P(0, 11) = 11 // base condition<br>P(0, 8) = 8 // base condition<br>P(0, 5) = 5 // base condition<br>P(0, 2) = 2 // base condition<br>P(1, 11) = min{11, 9, 7, 5} = 5 // running the minimum<br>Calculate P(1, 6)<br>P(1, 6) = min{ P(0, 6), 1 + P(0, 3), 2 + P(0, 0)}<br>P(0, 6) = 6 // base condition<br>P(0, 3) = 3 // base condition<br>P(0, 0) = 1 // base condition<br>P(1, 6) = min { 6, 4, 3 } = 3 // running the minimum<br>P(1, 1) = min {P(0, 1)} = 1<br>P(2, 11) = min { 5, 4, 3 } = 3<br><br>The coins that we have chosen are 5 + 5 + 1</p>
+</div>
+</div><div class="bottom-cb-alt"></div></div>
+<div class="comment-box-alt"><div class="top-cb-alt"></div>
+<div class="center-cb-alt">
+<div class="commentcount"></div>
+<strong>
+<a href="http://www.blogger.com/profile/03108770421321595567">Sakit Atakishiyev</a>
+<span class="item-control blog-admin pid-800240241">
+<a href="http://www.blogger.com/delete-comment.g?blogID=6038272452605714757&postID=3184919451479668165" title="Delete Comment">
+<img src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon_delete13.gif" style="border:none;">
+</a>
+</span>
+</strong>
+<div class="date"><a href="http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html#comment-3184919451479668165" title="comment permalink">
+December 9, 2012 at 5:14 AM
+</a></div>
+<div class="text">
+<p>Anonymous<br>you have some mistake.in your comment your write that P(0,0)=0 and then you wrote that P(0,0)=1. which is correct?</p>
+</div>
+</div><div class="bottom-cb-alt"></div></div>
+</div>
+<p class="comment-footer">
+<a href="http://www.blogger.com/comment.g?blogID=6038272452605714757&postID=3234023274542396938" onclick="">Post a Comment</a>
+</p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+<!-- google_ad_section_end -->
+</div>
+<div class="post-navigator" id="post-navigator-single">
+<div class="alignright" id="post-navigator">
+<a class="blog-pager-newer-link" href="http://tech-queries.blogspot.in/2009/05/max-possible-sum-of-non-consecutive.html" id="Blog1_blog-pager-newer-link" title="Newer Post">Newer Entries »</a>
+</div>
+<div class="alignleft" id="post-navigator-single">
+<a class="blog-pager-older-link" href="http://tech-queries.blogspot.in/2009/04/reconstruct-tree-from-matrix.html" id="Blog1_blog-pager-older-link" title="Older Post">« Older Entries</a>
+</div>
+</div>
+<div class="clear"></div>
+</div></div>
+</div>
+<div id="product-sidebar">
+<div class="sidebar-box">
+<div class="sidebar-box5 section" id="sidebar-box5"><div class="widget HTML" id="HTML4">
+<div class="widget-content">
+<style> 
+/*--------Touch Me Sharing Widget ------*/ 
+.touchme a { 
+display:block; 
+height:50px; 
+width:50px; 
+padding:0 4px; 
+float:left; 
+background:transparent url(http://mybloggertricks.googlecode.com/files/Sharing%20Touch%20Me.png) no-repeat; 
+-webkit-transition: ease-in 0.2s all;    
+-moz-transition: ease-in 0.2s all;    
+-o-transition: ease-in 0.2s all;    
+-ms-transition: ease-in 0.2s all;    
+transition: ease-in 0.2s all; 
+cursor:pointer;
+}
+
+.touchme a.googleplus { 
+background-position: 0px -58px;
+} 
+.touchme a.googleplus:hover { 
+background-position: 0px 0px; 
+}
+
+.touchme a.twitter { 
+background-position: 0px -290px;
+} 
+.touchme a.twitter:hover { 
+background-position: 0px -232px;
+} 
+.touchme a.facebook { 
+background-position: 0px -406px;
+} 
+.touchme a.facebook:hover { 
+background-position: 0px -348px;
+}
+
+.touchme a.rss { 
+background-position: 0px -174px;
+} 
+.touchme a.rss:hover { 
+background-position: 0px -116px;
+}
+
+</style>
+
+<div class="touchme" align="right">
+<!--RSS--> 
+<a class="rss" href="http://feeds.feedburner.com/tech-queries" rel="external nofollow" target="_blank"></a>
+<!--Facebook--> 
+<a class="facebook" href="https://www.facebook.com/ProgrammingInterviews" rel="external nofollow" target="_blank"></a>
+<!-- Twitter --> 
+<a class="twitter" href="http://twitter.com/akashag1001" rel="external nofollow" target="_blank"></a>
+
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6038272452605714757&widgetType=HTML&widgetId=HTML4&action=editWidget&sectionId=sidebar-box5" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML4&quot;));" target="configHTML4" title="Edit">
+<img alt="" height="18" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget HTML" id="HTML5">
+<h2 class="title">Find us on Facebook</h2>
+<div class="widget-content">
+<iframe src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/likebox.htm" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:252px; height:395px;" allowtransparency="true"></iframe>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6038272452605714757&widgetType=HTML&widgetId=HTML5&action=editWidget&sectionId=sidebar-box5" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML5&quot;));" target="configHTML5" title="Edit">
+<img alt="" height="18" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget HTML" id="HTML2">
+<h2 class="title">Subscribe</h2>
+<div class="widget-content">
+<p align="center">
+<a href="http://feeds.feedburner.com/tech-queries"><img src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/RSS_icon_26x26.png height=" 26"="" width="26" style="border:0"> <img src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/tech-queries" height="26" width="88" style="border:0"></a>
+</p>
+
+<form style="border:0 solid #ccc;padding:3px;text-align:center;" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;http://feedburner.google.com/fb/a/mailverify?uri=tech-queries&#39;, &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true"><p>Subscribe by email. Enter your email address:</p><p><input type="text" style="width:220px" name="email"></p><input type="hidden" value="tech-queries" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe"></form>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6038272452605714757&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=sidebar-box5" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML2&quot;));" target="configHTML2" title="Edit">
+<img alt="" height="18" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget BlogArchive" id="BlogArchive2">
+<h2>Archives</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive2_ArchiveList">
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=YEARLY-1325356200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/search?updated-min=2012-01-01T00:00:00%2B05:30&updated-max=2013-01-01T00:00:00%2B05:30&max-results=3">2012</a>
+<span class="post-count" dir="ltr">(3)</span>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1346437800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2012_09_01_archive.html">September</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1338489000000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2012_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1330540200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2012_03_01_archive.html">March</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=YEARLY-1293820200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/search?updated-min=2011-01-01T00:00:00%2B05:30&updated-max=2012-01-01T00:00:00%2B05:30&max-results=50">2011</a>
+<span class="post-count" dir="ltr">(65)</span>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1322677800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_12_01_archive.html">December</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1320085800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1314815400000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_09_01_archive.html">September</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1312137000000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(8)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1309458600000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_07_01_archive.html">July</a>
+<span class="post-count" dir="ltr">(7)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1306866600000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(10)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1304188200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1301596200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_04_01_archive.html">April</a>
+<span class="post-count" dir="ltr">(8)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1298917800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_03_01_archive.html">March</a>
+<span class="post-count" dir="ltr">(10)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1296498600000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_02_01_archive.html">February</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1293820200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2011_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(7)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=YEARLY-1262284200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/search?updated-min=2010-01-01T00:00:00%2B05:30&updated-max=2011-01-01T00:00:00%2B05:30&max-results=41">2010</a>
+<span class="post-count" dir="ltr">(41)</span>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1291141800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2010_12_01_archive.html">December</a>
+<span class="post-count" dir="ltr">(8)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1288549800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2010_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1285871400000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2010_10_01_archive.html">October</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1283279400000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2010_09_01_archive.html">September</a>
+<span class="post-count" dir="ltr">(8)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1280601000000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2010_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1277922600000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2010_07_01_archive.html">July</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1272652200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2010_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1270060200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2010_04_01_archive.html">April</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1267381800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2010_03_01_archive.html">March</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="archivedate expanded">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=close&toggle=YEARLY-1230748200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy toggle-open">▼ </span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/search?updated-min=2009-01-01T00:00:00%2B05:30&updated-max=2010-01-01T00:00:00%2B05:30&max-results=11">2009</a>
+<span class="post-count" dir="ltr">(11)</span>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1249065000000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2009_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1243794600000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2009_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1241116200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2009_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate expanded">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=close&toggle=MONTHLY-1238524200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy toggle-open">▼ </span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2009_04_01_archive.html">April</a>
+<span class="post-count" dir="ltr">(4)</span>
+<ul class="posts">
+<li><a href="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/Minimum number of coins   PROGRAMMING INTERVIEWS.htm">Minimum number of coins</a></li>
+<li><a href="http://tech-queries.blogspot.in/2009/04/reconstruct-tree-from-matrix.html">Reconstruct tree from matrix</a></li>
+<li><a href="http://tech-queries.blogspot.in/2009/04/amazon-interview.html">Amazon Interview</a></li>
+<li><a href="http://tech-queries.blogspot.in/2009/04/what-is-deal-with-virtual-destructor.html">What is the deal with Virtual Destructor?</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1230748200000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2009_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=YEARLY-1199125800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/search?updated-min=2008-01-01T00:00:00%2B05:30&updated-max=2009-01-01T00:00:00%2B05:30&max-results=9">2008</a>
+<span class="post-count" dir="ltr">(9)</span>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1228069800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2008_12_01_archive.html">December</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html?widgetType=BlogArchive&widgetId=BlogArchive2&action=toggle&dir=open&toggle=MONTHLY-1225477800000&toggleopen=MONTHLY-1238524200000">
+<span class="zippy">
+
+              ►
+            
+</span>
+</a>
+<a class="post-count-link" href="http://tech-queries.blogspot.in/2008_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(7)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6038272452605714757&widgetType=BlogArchive&widgetId=BlogArchive2&action=editWidget&sectionId=sidebar-box5" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;BlogArchive2&quot;));" target="configBlogArchive2" title="Edit">
+<img alt="" height="18" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget HTML" id="HTML1">
+<h2 class="title">Recent Comments</h2>
+<div class="widget-content">
+<script style="text/javascript" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/rc1blogger.js"></script><script style="text/javascript">var a_rc=5;var m_rc=false;var n_rc=true;var o_rc=100;</script><script src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/default"></script><div class="rcw-comments"><a href="http://tech-queries.blogspot.com/2011/06/get-maximum-sum-from-coins-in-line.html?showComment=1360008863421#comment-c2924970839024591511">archit maheshwari</a> commented on <a href="http://tech-queries.blogspot.com/2011/06/get-maximum-sum-from-coins-in-line.html?showComment=1360008863421">get maximum sum from coins in line</a>: <i>very good and appreciable work!!....</i></div><div class="rcw-comments"><a href="http://tech-queries.blogspot.com/2011/06/get-maximum-sum-from-coins-in-line.html?showComment=1357536081361#comment-c8449283672169119093">Akash</a> commented on <a href="http://tech-queries.blogspot.com/2011/06/get-maximum-sum-from-coins-in-line.html?showComment=1357536081361">get maximum sum from coins in line</a>: <i>Thanks Denial...</i></div><div class="rcw-comments"><a href="http://tech-queries.blogspot.com/2011/07/find-if-given-pattern-is-present-in.html?showComment=1357536034536#comment-c5190729446660944661">Akash</a> commented on <a href="http://tech-queries.blogspot.com/2011/07/find-if-given-pattern-is-present-in.html?showComment=1357536034536">find if given pattern is present in</a>: <i>@Upasana: Bt this method, you are just confirming if all the pattern characters are present in…</i></div><div class="rcw-comments"><a href="http://tech-queries.blogspot.com/2011/06/get-maximum-sum-from-coins-in-line.html?showComment=1357503381625#comment-c8444148188300315032">denial</a> commented on <a href="http://tech-queries.blogspot.com/2011/06/get-maximum-sum-from-coins-in-line.html?showComment=1357503381625">get maximum sum from coins in line</a>: <i>thank you for your great work</i></div><div class="rcw-comments"><a href="http://tech-queries.blogspot.com/2010/12/iterative-in-order-traversal-of-binary.html?showComment=1356859565595#comment-c4751282163641437679">Anonymous</a> commented on <a href="http://tech-queries.blogspot.com/2010/12/iterative-in-order-traversal-of-binary.html?showComment=1356859565595">iterative in order traversal of binary</a>: <i>Refer this for original solutionhttp://web.cs.wpi.edu/~cs2005/common/iterative.inorder--Even while…</i></div> 
+ <style type="text/css">  .rcw-comments a {text-transform: capitalize;} .rcw-comments {border-bottom: 1px dotted; padding-top: 7px!important; padding-bottom: 7px!important;} #rcw-cr {font-family: Arial,Tahoma;font-size:9px;padding-top:7px;display:block;} </style>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6038272452605714757&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar-box5" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML1&quot;));" target="configHTML1" title="Edit">
+<img alt="" height="18" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget Followers" id="Followers1">
+<h2 class="title">Followers</h2>
+<div class="widget-content">
+<div id="Followers1-wrapper">
+<div style="margin-right:2px;">
+<script type="text/javascript">
+        if (!window.google || !google.friendconnect) {
+          document.write('<script type="text/javascript"' +
+              'src="http://www.google.com/friendconnect/script/friendconnect.js">' +
+              '</scr' + 'ipt>');
+        }
+      </script><script type="text/javascript" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/friendconnect.js"></script>
+<script type="text/javascript">
+      if (!window.registeredBloggerCallbacks) {
+        window.registeredBloggerCallbacks = true;
+
+        
+
+        
+        gadgets.rpc.register('requestReload', function() {
+          document.location.reload();
+        });
+
+        
+        gadgets.rpc.register('requestSignOut', function(siteId) {
+          
+          google.friendconnect.container.openSocialSiteId = siteId;
+          google.friendconnect.requestSignOut();
+        });
+      }
+    </script>
+<script type="text/javascript">
+    
+    function registerGetBlogUrls() {
+      gadgets.rpc.register('getBlogUrls', function() {
+        var holder = {};
+        
+          
+            
+            
+              holder.currentPost = "http://www.blogger.com/feeds/6038272452605714757/posts/default/3234023274542396938";
+            
+            
+            
+              holder.currentComments = "http://www.blogger.com/feeds/6038272452605714757/3234023274542396938/comments/default";
+            
+            holder.currentPostUrl = "";
+            holder.currentPostId = 3234023274542396938
+          
+          
+          
+            holder.postFeed = "http://www.blogger.com/feeds/6038272452605714757/posts/default";
+          
+          
+          
+            holder.commentFeed = "http://www.blogger.com/feeds/6038272452605714757/comments/default";
+          
+          holder.currentBlogUrl = "http://tech-queries.blogspot.com/";
+          holder.currentBlogId = "6038272452605714757";
+        
+        return holder;
+      });
+    }
+  </script>
+<script type="text/javascript">
+  if (!window.registeredCommonBloggerCallbacks) {
+    window.registeredCommonBloggerCallbacks = true;
+
+    gadgets.rpc.register('resize_iframe', function(height) {
+      var el = document.getElementById(this['f']);
+      if (el) {
+        el.style.height = height + 'px';
+      }
+    });
+
+    
+    gadgets.rpc.register('set_pref', function() {});
+
+    registerGetBlogUrls();
+  }
+  </script>
+<div id="div-1jxovfnwzmirf" style="width: 100%; visibility: visible;" class="gadgets-gadget-container"><div id="gfc_iframe_801762588_0_body"><iframe id="gfc_iframe_801762588_0" name="gfc_iframe_801762588_0" style="width: 100%; height: 244px;" frameborder="0" scrolling="no" allowtransparency="true" height="260"></iframe></div></div>
+<script type="text/javascript">
+    var skin = {};
+    skin['FACE_SIZE'] = '32';
+    skin['HEIGHT'] = "260";
+    skin['TITLE'] = "Followers";
+    skin['BORDER_COLOR'] = "transparent";
+    skin['ENDCAP_BG_COLOR'] = "transparent";
+    skin['ENDCAP_TEXT_COLOR'] = "#000000";
+    skin['ENDCAP_LINK_COLOR'] = "#000000";
+    skin['ALTERNATE_BG_COLOR'] = "transparent";
+    
+    skin['CONTENT_BG_COLOR'] = "transparent";
+    skin['CONTENT_LINK_COLOR'] = "#000000";
+    skin['CONTENT_TEXT_COLOR'] = "#000000";
+    skin['CONTENT_SECONDARY_LINK_COLOR'] = "#FFFFFF";
+    skin['CONTENT_SECONDARY_TEXT_COLOR'] = "#000000";
+    skin['CONTENT_HEADLINE_COLOR'] = "#000000";
+    skin['FONT_FACE'] = "Arial";
+    google.friendconnect.container.setParentUrl("/");
+    google.friendconnect.container["renderMembersGadget"](
+    {id: "div-1jxovfnwzmirf",
+     height: 260,
+     
+     
+     
+     site: "07855612530399336982",
+     
+     locale: 'en' },
+     skin);
+  </script>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6038272452605714757&widgetType=Followers&widgetId=Followers1&action=editWidget&sectionId=sidebar-box5" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Followers1&quot;));" target="configFollowers1" title="Edit">
+<img alt="" height="18" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</div>
+<div class="sidebar-box">
+<div class="sidebar-box6 section" id="sidebar-box6"><div class="widget Label" id="Label1">
+<h2>I write about</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Algorithm">Algorithm</a>
+<span dir="ltr">(30)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Amazon%20EC2">Amazon EC2</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Amazon%20Interview">Amazon Interview</a>
+<span dir="ltr">(9)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Amazon%20S3">Amazon S3</a>
+<span dir="ltr">(5)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Amazon%20SimpleDB">Amazon SimpleDB</a>
+<span dir="ltr">(5)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Amazon%20SQS">Amazon SQS</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Architecture">Architecture</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Arrays%2FStrings">Arrays/Strings</a>
+<span dir="ltr">(31)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Brain%20Teasers">Brain Teasers</a>
+<span dir="ltr">(7)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/C%2B%2B">C++</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Cloud%20Computing">Cloud Computing</a>
+<span dir="ltr">(14)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Design%20Pattern">Design Pattern</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Dynamic%20programming">Dynamic programming</a>
+<span dir="ltr">(9)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Facebook%20Interview">Facebook Interview</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/General">General</a>
+<span dir="ltr">(14)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Git">Git</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Google%20Interview">Google Interview</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Humour">Humour</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Interviews">Interviews</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Link%20List">Link List</a>
+<span dir="ltr">(8)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Mac">Mac</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Mathematics">Mathematics</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/MIcrosoft%20Interview">MIcrosoft Interview</a>
+<span dir="ltr">(4)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Miscellany">Miscellany</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/python">python</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/queue">queue</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/Ruby">Ruby</a>
+<span dir="ltr">(9)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/tree">tree</a>
+<span dir="ltr">(19)</span>
+</li>
+<li>
+<a dir="ltr" href="http://tech-queries.blogspot.in/search/label/web%20development">web development</a>
+<span dir="ltr">(1)</span>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6038272452605714757&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar-box6" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Label1&quot;));" target="configLabel1" title="Edit">
+<img alt="" height="18" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class="clear">&nbsp;</div>
+</div>
+<!-- end content-wrapper -->
+<div id="footer-bot">
+<div class="sidebar-box">
+<div class="sidebar-box1 section" id="sidebar-box1">
+</div>
+</div>
+<div class="sidebar-box">
+<div class="sidebar-box2 section" id="sidebar-box2">
+</div>
+</div>
+<div class="sidebar-box">
+</div>
+</div>
+</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border: none;" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/xd_arbiter.htm"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border: none;" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/xd_arbiter(1).htm"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><iframe frameborder="0" name="google_top_static_frame" style="height: 0px; width: 0px; position: absolute;" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/blank.htm"></iframe>
+<!-- end outer-wrapper -->
+<!-- start Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18273895-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- end Google Analytics -->
+<!-- Add-in Script for syntax highlighting -->
+<script language="javascript">  
+dp.SyntaxHighlighter.BloggerMode();  
+dp.SyntaxHighlighter.HighlightAll('code');  
+</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="./Minimum number of coins   PROGRAMMING INTERVIEWS_files/3790812069-widgets.js"></script>
+<script type="text/javascript">
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '6038272452605714757';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d6038272452605714757','//tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html','6038272452605714757');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '6038272452605714757', 'bloggerUrl': 'http://www.blogger.com', 'title': 'PROGRAMMING INTERVIEWS', 'pageType': 'item', 'url': 'http://tech-queries.blogspot.in/2009/04/minimum-number-of-coins.html', 'canonicalUrl': 'http://tech-queries.blogspot.com/2009/04/minimum-number-of-coins.html', 'canonicalHomepageUrl': 'http://tech-queries.blogspot.com/', 'homepageUrl': 'http://tech-queries.blogspot.in/', 'blogspotFaviconUrl': 'http://tech-queries.blogspot.in/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': '', 'searchLabel': '', 'searchQuery': '', 'pageName': 'Minimum number of coins', 'pageTitle': 'PROGRAMMING INTERVIEWS: Minimum number of coins', 'encoding': 'UTF-8', 'locale': 'en', 'localeLanguage': 'en', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42PROGRAMMING INTERVIEWS - Atom\42 href\75\42http://tech-queries.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42PROGRAMMING INTERVIEWS - RSS\42 href\75\42http://tech-queries.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42PROGRAMMING INTERVIEWS - Atom\42 href\75\42http://www.blogger.com/feeds/6038272452605714757/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0756038272452605714757\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42PROGRAMMING INTERVIEWS - Atom\42 href\75\42http://tech-queries.blogspot.com/feeds/3234023274542396938/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'postImageThumbnailUrl': 'http://2.bp.blogspot.com/_DCqVNrdxjKY/TNgBH_VcyzI/AAAAAAAAD2M/QILHBL7rLXE/s72-c/Dyn+Prog.png', 'imageSrcTag': '\74link rel\75\42image_src\42 href\75\42http://2.bp.blogspot.com/_DCqVNrdxjKY/TNgBH_VcyzI/AAAAAAAAD2M/QILHBL7rLXE/s72-c/Dyn+Prog.png\42 /\76\n', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window,b\75\42jstiming\42,d\75\42tick\42;var e\75function(c){this.t\75{};this.tick\75function(c,p,h){h\75void 0!\75h?h:(new Date).getTime();this.t[c]\75[h,p]};this[d](\42start\42,null,c)},f\75new e;a.jstiming\75{Timer:e,load:f};if(a.performance\46\46a.performance.timing){var g\75a.performance.timing,j\75a[b].load,k\75g.navigationStart,l\75g.responseStart;0\74k\46\46l\76\75k\46\46(j[d](\42_wtsrt\42,void 0,k),j[d](\42wtsrt_\42,\42_wtsrt\42,l),j[d](\42tbsd_\42,\42wtsrt_\42))}\ntry{var m\75null;a.chrome\46\46a.chrome.csi\46\46(m\75Math.floor(a.chrome.csi().pageT),j\46\0460\74k\46\46(j[d](\42_tbnd\42,void 0,a.chrome.csi().startE),j[d](\42tbnd_\42,\42_tbnd\42,k)));null\75\75m\46\46a.gtbExternal\46\46(m\75a.gtbExternal.pageT());null\75\75m\46\46a.external\46\46(m\75a.external.pageT,j\46\0460\74k\46\46(j[d](\42_tbnd\42,void 0,a.external.startE),j[d](\42tbnd_\42,\42_tbnd\42,k)));m\46\46(a[b].pt\75m)}catch(n){};a.tickAboveFold\75function(c){var i\0750;if(c.offsetParent){do i+\75c.offsetTop;while(c\75c.offsetParent)}c\75i;750\76\75c\46\46a[b].load[d](\42aft\42)};var q\75!1;function r(){q||(q\75!0,a[b].load[d](\42firstScrollTime\42))}a.addEventListener?a.addEventListener(\42scroll\42,r,!1):a.attachEvent(\42onscroll\42,r);\n })();\74/script\076', 'mobileHeadScript': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/415c4782c5b3e5f8', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js'}}, {'name': 'skin', 'data': {'vars': {}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '/?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '/?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '/?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '/?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '/?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '/?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '/?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header-left', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'sidebar-box5', null, document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'sidebar-box5', null, document.getElementById('HTML5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'sidebar-box5', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive2', 'sidebar-box5', null, document.getElementById('BlogArchive2'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-box5', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_FollowersView', new _WidgetInfo('Followers1', 'sidebar-box5', null, document.getElementById('Followers1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar-box6', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': '//www.blogger.com/static/v1/jsbin/939781589-lbx.js', 'lightboxCssUrl': '//www.blogger.com/static/v1/v-css/228702327-lightbox_bundle.css'}, 'displayModeFull'));
+</script>
+
+</body></html>

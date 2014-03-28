@@ -1,0 +1,367 @@
+
+<!-- saved from url=(0050)http://www.palowireless.com/bluearticles/stack.asp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="robots" content="index,follow,noarchive">
+<title>Bluetooth Tutorial -- Bluetooth Protocol Stack</title>
+<meta name="description" content="Bluetooth Tutorial -- Bluetooth Protocol Stack.">
+<meta name="keywords" content="bluetooth, Bluetooth, BLUETOOTH, stack, STACK, protocol stack, PROTOCOL, baseband, ACL, SCO, piconet, layer, Tutorial, FAQ">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link href="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/mainstyle.css" rel="STYLESHEET" type="text/css">
+<meta name="Microsoft Border" content="tl, default">
+</head>
+
+<body><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td>
+
+<table border="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center" width="40"></td>
+    <td align="center" width="120" height="60">&nbsp;</td>
+    <td align="center" width="460">
+      <p align="center"><a href="http://www.palowireless.com/" target="_blank"><img border="0" src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/palowireless2.gif" alt="palowireless" width="244" height="60"></a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="Arial,Helvetica" color="#333366" size="3"><b>Bluetooth
+      Resource Center</b></font></p>
+    </td>
+    <td align="center" valign="middle">
+      
+<!-- Google CSE Search Box Begins -->
+<form id="searchbox_011567268978337517561:zbrhekvus_u" action="http://www.palowireless.com/search/gresults.asp">
+  <table cellspacing="2" cellpadding="2" border="0">
+    <tbody><tr>
+      <td align="center">
+        <p align="left"><input type="hidden" name="cx" value="011567268978337517561:zbrhekvus_u"><input name="q" type="text" value="" size="15" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background-image: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif); background-color: rgb(255, 255, 255); background-position: 0% 50%; background-repeat: no-repeat no-repeat;">
+        <input type="submit" name="sa" value="Search"> <input type="hidden" name="cof" value="FORID:9"><br>
+        <a href="http://www.palowireless.com/search/"><font color="#000000" face="Arial,Helvetica" size="1">Advanced
+        search</font></a></p>
+      </td>
+    </tr>
+  </tbody></table>
+<input name="siteurl" type="hidden" value="www.palowireless.com/bluearticles/stack.asp"><input name="ref" type="hidden" value="www.google.co.in/"><input name="ss" type="hidden" value=""></form>
+<script type="text/javascript" src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/brand"></script>
+            <!-- Google CSE Search Box Ends -->
+
+    </td>
+  </tr>
+</tbody></table>
+<hr>
+
+</td></tr><!--msnavigation--></tbody></table><!--msnavigation--><table dir="ltr" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td valign="top" width="1%">
+
+
+
+<table border="0" width="120" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td align="center"><img src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/LeftBlueTop120.gif" alt="palowireless" width="120" height="17"></td>
+  </tr>
+  <tr bgcolor="#000080">
+    <td align="center">
+      <p class="menus" align="center"><a href="http://www.palowireless.com/" title="Palowireless Home"><font color="#FFFF80" size="2"><b>Home</b></font></a><br>
+      <a href="http://www.palowireless.com/search/" title="Advanced Search"><font color="#EDFCFD" size="2">Search</font></a><br>
+      <a href="http://www.palowireless.com/marketresearch/" title="Wireless Market Research"><font color="#EDFCFD" size="2">Market
+      Research</font></a><br>
+      <a href="http://www.palowireless.com/submiturl.asp" title="Submit a site or event"><font color="#EDFCFD" size="2">Add
+      a Link</font></a><br>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/LeftBlueBottom120.gif" alt="Wireless" width="120" height="17"></td>
+  </tr>
+</tbody></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td colspan="3"><img src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/LeftGreyTop120.gif" alt="Bluetooth WPAN Specs Specifications RF Intro" width="120" height="20"></td>
+  </tr>
+  <tr width="120">
+    <td bgcolor="#7394AD" width="1"><br>
+    </td>
+    <td align="center" bgcolor="#DEE7EF" width="118"><strong><a href="http://www.palowireless.com/bluetooth/" title="Bluetooth Resource Center"><font color="#404040">Bluetooth</font></a></strong><br>
+      <a href="http://www.palowireless.com/bluetooth/accesspts.asp" title="Bluetooth Access Points"><font color="#000000">Access
+      Points</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/antenna.asp" title="Bluetooth Antennas"><font color="#000000">Antennas</font></a><br>
+      <a href="http://www.palowireless.com/bluearticles/" title="Bluetooth Articles"><font color="#000000">Articles</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/btaudio.asp" title="Bluetooth Audio"><font color="#000000">Audio</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/bluejacking.asp" title="Bluejacking"><font color="#000000">Bluejacking</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/carkits.asp" title="Bluetooth Car Kits"><font color="#000000">Car
+      Kits</font></a><br>
+      <a href="http://www.palowireless.com/infotooth/cathalscorner.asp" title="Cathal&#39;s Corner"><font color="#000000">Cathal's
+      Corner</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/consultants.asp" title="Bluetooth Consultants"><font color="#000000">Consultants</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/designtools.asp" title="Bluetooth Design Tools"><font color="#000000">Design
+      Tools</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/devtools.asp" title="Bluetooth Hardware and Software Developer Tools, SDKs"><font color="#000000">Dev
+      Tools</font></a><br>
+      <a href="http://www.palowireless.com/infotooth/download.asp" title="Bluetooth Document Downloads"><font color="#000000">Downloads</font></a><br>
+      <a href="http://www.palowireless.com/infotooth/knowbase.asp" title="Bluetooth FAQ and Knowledge Base"><font color="#000000">FAQ</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/forums.asp" title="Bluetooth Forums"><font color="#000000">Forums</font></a><br>
+      <a href="http://www.palowireless.com/infotooth/glossary.asp" title="Bluetooth Glossary"><font color="#000000">Glossary</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/headsets.asp" title="Bluetooth Headsets and Hands-Free"><font color="#000000">Headsets</font></a><br>
+      <a href="http://www.palowireless.com/infotooth/" title="Bluetooth FAQ and Tutorial"><font color="#000000">InfoTooth</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/news.asp" title="Bluetooth News and Headlines"><font color="#000000">News</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/phones.asp" title="Bluetooth Phones"><font color="#000000">Phones</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/printers.asp" title="Bluetooth Printers and Print Adapters"><font color="#000000">Printers</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/products.asp" title="Bluetooth Products"><font color="#000000">Products</font></a><br>
+      <a href="http://www.palowireless.com/infotooth/tutorial/profiles.asp" title="Bluetooth Profiles"><font color="#000000">Profiles</font></a><br>
+      <a href="http://www.palowireless.com/marketresearch/results.asp?bQuery=Bluetooth&fy=24" title="Bluetooth Market Research"><font color="#000000">Research</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/security.asp" title="Bluetooth Security"><font color="#000000">Security</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/shop.asp" title="Buy Bluetooth Products Online"><font color="#000000">Shop</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/wwwbtcom.asp" title="Bluetooth SIG"><font color="#000000">SIG</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/software.asp" title="Bluetooth Software"><font color="#000000">Software</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/technology.asp" title="Bluetooth Technology"><font color="#000000">Technology</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/testequip.asp" title="Bluetooth Testing, Test Equipment, BQB and Certification"><font color="#000000">Testing</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/training.asp" title="Bluetooth Training"><font color="#000000">Training</font></a><br>
+      <a href="http://www.palowireless.com/infotooth/tutorial.asp" title="Bluetooth Tutorial"><font color="#000000">Tutorial</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/usb.asp" title="Bluetooth USB Adapters and Dongles"><font color="#000000">USB</font></a><br>
+      <a href="http://www.palowireless.com/bluetooth/bt_wlans.asp" title="Bluetooth and Wireless LANs"><font color="#000000">WLANs
+      &amp; BT</font></a>
+      <p class="menus" align="center"><a href="http://www.palowireless.com/infotooth/whatis.asp" title="What Is Bluetooth?"><b><font color="#000000">What
+      Is Bluetooth?</font></b></a></p>
+    </td>
+    <td bgcolor="#7394AD" width="1"><br>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3"><img src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/LeftGreyBottom120.gif" alt="Protocol Stack Analyzers Testing Security" width="120" height="20"></td>
+  </tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td align="center">
+      <br>
+<script type="text/javascript"><!--
+google_ad_client = "pub-0355184400279340";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_channel ="4767564545";
+google_ad_type = "text_image";
+google_color_border = "EDFCFD";
+google_color_bg = "EDFCFD";
+google_color_link = "0000FF";
+google_color_url = "000080";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript" src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><iframe width="120" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+<br>
+<br><br>
+<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-0355184400279340";
+google_ad_width = 120;
+google_ad_height = 90;
+google_ad_format = "120x90_0ads_al_s";
+google_ad_channel ="4767564545";
+google_color_border = "EDFCFD";
+google_color_bg = "EDFCFD";
+google_color_link = "0000FF";
+google_color_url = "000080";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript" src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><iframe width="120" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</td></tr></tbody></table>
+<br>
+
+    </td>
+  </tr>
+  
+</tbody></table>
+
+
+<table>
+  <tbody><tr>
+    <td>
+      <div align="center">
+        &nbsp;
+      </div>
+    </td>
+  </tr>
+</tbody></table>
+ 
+<table border="0" cellpadding="0" width="120" cellspacing="0">
+  <tbody><tr>
+    <td align="center"><img src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/LeftBlueTop120.gif" alt="wireless" width="120" height="17"></td>
+  </tr>
+  
+  <tr>
+    <td align="center" bgcolor="#000080">
+      <p><b><a href="http://www.palowireless.com/membership.asp" title="Palowireless Membership"><font color="#FFFF80">Members</font></a></b></p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#000080">
+      <form action="http://www.palowireless.com/login.asp" method="post">
+        <input type="hidden" name="action" value="login">
+        <p><font size="2" color="#FFFFFF">Member:</font><br>
+        <input name="user_id" size="8" value=""><br>
+        <font size="2" color="#FFFFFF">Password:</font><br>
+        <input type="hidden" name="rememberme" value="">
+        <input type="password" name="pword" size="8"><br>
+        <input type="submit" name="submit" value="Login"></p>
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#000080"><a href="http://www.palowireless.com/forgotpassword.asp" title="Forgot your password?"><font color="#ffffff">Forgot
+      your<br>
+      password?</font></a><br>
+      <br>
+      <a href="http://www.palowireless.com/newuser.asp" title="Create a new member account"><font color="#ffffff">New
+      Member<br>
+      </font></a></td>
+  </tr>
+  
+  <tr>
+    <td align="center"><img src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/LeftBlueBottom120.gif" alt="palowireless" width="120" height="17"></td>
+  </tr>
+</tbody></table>
+ 
+
+</td><td valign="top" width="24"></td><!--msnavigation--><td valign="top">
+
+<center>
+<table border="0" width="80%" cellspacing="0" cellpadding="2" align="center">
+  <tbody><tr align="center">
+    <td align="left">[&nbsp; Also see:&nbsp; <a href="http://www.palowireless.com/bluearticles/softtooth.asp">Overview</a>&nbsp;&nbsp;&nbsp;
+      <a href="http://www.palowireless.com/bluearticles/baseband.asp">Baseband</a>&nbsp;&nbsp; <a href="http://www.palowireless.com/bluearticles/connection.asp">Connection</a>&nbsp;&nbsp;
+      <a href="http://www.palowireless.com/bluearticles/lm.asp">Link</a>&nbsp;&nbsp; <a href="http://www.palowireless.com/bluearticles/adapt.asp">L2CAP</a>&nbsp;&nbsp;
+      <a href="http://www.palowireless.com/bluearticles/radio.asp">Radio</a>&nbsp; ]
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+  <tr align="center">
+    <td align="left">
+      <h1><a name="Bluetooth_Stack_description">Bluetooth Protocol Stack
+      Description</a></h1>
+      <p align="center"><font size="-1" color="#800000"><img src="./Bluetooth Tutorial -- Bluetooth Protocol Stack_files/stack.jpeg" border="0" align="center" alt="Bluetooth Protocol Stack Radio Baseband ACL SCO Link LMP SDP Discovery" width="299" height="333"><br>
+      </font>
+      <table border="1" width="100%" cellspacing="0" cellpadding="4">
+        <tbody><tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">Bluetooth
+            radio</font></td>
+          <td valign="center" width="65%"><font size="-1" color="#000080">Bluetooth
+            radio is a transceiver which transmits and receives modulated
+            electrical signals from peer Bluetooth devices. The radio for
+            compatability reasons should have some defined transmitter and
+            receiver characteristics.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.palowireless.com/bluearticles/radio.asp"><font color="#800000" size="-1">More
+            ..</font></a></font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">Baseband</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">Baseband
+            is the physical layer of the Bluetooth which manages physical
+            channels and links apart from other services like error correction,
+            data whitening, hop selection and Bluetooth security.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.palowireless.com/bluearticles/baseband.asp"><font color="#800000" size="-1">More ..</font></a></font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">ACL</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">ACL is
+            Asynchronous Connection-Less physical link for transmitting data
+            over the physical channels. ACL link provides a packet switched
+            connection between the master and all the active slaves.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.palowireless.com/bluearticles/baseband.asp#acl"><font color="#800000" size="-1">More ..</font></a></font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">SCO</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">SCO is
+            Synchronous Connection-Oriented physical link for voice-like
+            information. It is a symmetric, point-to-point link between the
+            master and a specific slave. It behaves like a circuit-switched
+            connection.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.palowireless.com/bluearticles/baseband.asp#sco"><font color="#800000" size="-1">More
+            ..</font></a></font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">Link
+            Manager</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">Link
+            Manager essentially handles link set-up, security and control. It
+            provides services like authentication, encryption control, power
+            control and provides QoS capabilities. It also manages devices in
+            different modes (park, hold, sniff and active).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.palowireless.com/bluearticles/lm.asp"><font color="#800000" size="-1">More ..</font></a></font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">L2CAP</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">L2CAP
+            is the Logical Link Control and Adaptation Layer protocol. It
+            resides in the data link layer and provides connection-less and
+            connection-oriented data services to upper layer protocols with
+            protocol multiplexing capability, segmentation and reassembly
+            operation and group abstractions. L2CAP permits higher level
+            protocols and applications to transmit and receive L2CAP data
+            packets up to 64 Kb in length.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.palowireless.com/bluearticles/adapt.asp"><font color="#800000" size="-1">More
+            ..</font></a></font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">SDP</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">SDP is
+            Service Discovery Protocol for applications to discover which
+            services are available and to determine the characteristics of those
+            available services.</font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">RFCOMM</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">RFCOMM
+            is a simple transport protocol, with additional provisions for
+            emulating the 9 circuits of RS-232 (EIATIA-232-E) serial ports over
+            L2CAP protocol. It supports up to 60 simultaneous connections
+            between two Bluetooth devices.</font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">*
+            TCP/IP</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">TCP
+            (Transmission Control Protocol) provides a reliable connection
+            between devices at the transport layer with IP (Internet Protocol)
+            in the network layer. IP provides protocol multiplexing and
+            connections based on IP addresses. <!-- <a href="http://www.softtooth.com/tech/tutorial/bluetooth/blueapp.html"> <font color="#800000" size="-1">  More .. </font> </a> -->
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">*
+            JINI</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">Jini
+            technology provides simple mechanisms which enable devices to plug
+            together to form an impromptu community--a community put together
+            without any planning, installation, or human intervention. Each
+            device provides services that other devices in the community may
+            use. These devices provide their own interfaces, which ensures
+            reliability and compatibility. JINI works on higher layers while
+            Bluetooth works at much lower layers. There are interesting
+            opportunities to put JINI on top of Bluetooth Protocol.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.sun.com/jini/"><font color="#800000" size="-1">More
+            ..</font></a></font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000080" valign="center" width="25%"><font size="+0" color="#eeee99">*
+            WAP</font></td>
+          <td valign="center" width="75%"><font size="-1" color="#000080">WAP is
+            <a href="http://www.palowireless.com/wap/">Wireless Access Protocol</a> is a standard for
+            providing Internet communications and advanced telephony services on
+            <a href="http://www.palowireless.com/bluetooth/phones.asp">digital mobile phones</a>, pagers,
+            <a href="http://www.palowireless.com/gadgets/">personal digital assistants</a> and other
+            wireless terminals.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.palowireless.com/wap/"><font color="#800000" size="-1">More
+            ..</font></a></font></td>
+        </tr>
+      </tbody></table>
+      <table border="0" width="100%" cellspacing="0" cellpadding="2" align="center" bordercolor="#000000">
+        <tbody><tr align="right">
+          <td align="right"><font size="-1" color="#000080">* Not part of
+            Bluetooth protocol</font></td>
+        </tr>
+      </tbody></table>
+    </p></td>
+  </tr>
+</tbody></table>
+<br>
+</center>
+
+<!--msnavigation--></td></tr><!--msnavigation--></tbody></table>
+
+
+</body></html>
